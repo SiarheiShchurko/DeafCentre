@@ -6,13 +6,36 @@
 //
 
 import Foundation
-
-protocol GetRegistrationModelProtocol: AnyObject {
+// MARK: RegistrationModel protocol
+protocol RegistrationModelProtocol: AnyObject {
+    func checkEmailAndPassword(email: String?, password: String?)
     var sexArray: [String] { get }
+    var update: (() -> Void)? { get set }
+    var updateError: (() -> Void)? { get set }
 }
-
-final class RegistrationModel: GetRegistrationModelProtocol {
-    
+// MARK: RegistrationModel class
+final class RegistrationModel: RegistrationModelProtocol {
+    // Check Service
+    let checkRegistrFormService: CheckRegistrationFormProtocol = CheckRegistrationFormService()
+    // Update information funcs
+    var update: (() -> Void)?
+    var updateError: (() -> Void)?
+    // Array for changed sex
     var sexArray = [ KeysForView.man, KeysForView.woman ]
-    
+    // Func who start service check
+    func checkEmailAndPassword(email: String?, password: String?) {
+        let emailIsValid = checkRegistrFormService.isValidEmail(email: email ?? "")
+        let passwordIsValid = checkRegistrFormService.isValidPssword(password: password ?? "")
+        let isValid = (emailIsValid) && (passwordIsValid)
+        checkResult(isValid)
+    }
+    // Control check result geting from service
+    private func checkResult(_ object: Bool) {
+        switch object {
+        case true:
+            self.update?()
+        case false:
+            self.updateError?()
+        }
+    }
 }

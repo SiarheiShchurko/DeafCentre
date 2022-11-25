@@ -42,20 +42,18 @@ private extension ConfirmButton {
         self.titleLabel?.font = fontButton
         self.backgroundColor = colorButton
         self.setImage(buttonImage, for: .normal)
+        self.titleLabel?.textAlignment = .center
         self.layer.cornerRadius = LayoutConstants.inset20
         self.clipsToBounds = true
     }
 }
 private extension ConfirmButton {
     private func constraints() {
-//        self.heightAnchor.constraint(equalToConstant: LayoutConstants.height56).isActive = true
-//        self.widthAnchor.constraint(equalToConstant: 200).isActive = true
         self.imageView?.widthAnchor.constraint(equalToConstant: LayoutConstants.width20).isActive = true
         self.imageView?.heightAnchor.constraint(equalToConstant: LayoutConstants.height17).isActive = true
         self.titleLabel?.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
         self.imageView?.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -LayoutConstants.inset17).isActive = true
         self.titleLabel?.trailingAnchor.constraint(equalTo: self.imageView!.leadingAnchor, constant: -LayoutConstants.inset10).isActive = true
-       // self.imageView?.leadingAnchor.constraint(equalTo: titleLabel!.trailingAnchor, constant: LayoutConstants.inset20).isActive = true
         imageView?.contentMode = .right
     }
 }

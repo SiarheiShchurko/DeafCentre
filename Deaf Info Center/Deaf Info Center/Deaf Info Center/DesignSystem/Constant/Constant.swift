@@ -101,7 +101,7 @@ enum LayoutConstants {
     static let height270: CGFloat = 270.0
     static let height371: CGFloat = 371.0
     static let height375: CGFloat = 375.0
-    static let height1400: CGFloat = 1400.0
+    static let height1500: CGFloat = 1500.0
     // MARK: - Width
     static let displayWidth: CGFloat = UIScreen.main.bounds.width
     static let width0: CGFloat = 0

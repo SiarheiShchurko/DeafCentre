@@ -37,30 +37,28 @@ class LoginPageVc: UIViewController {
     }()
     // MARK: Time Label
     private lazy var timeLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
+        let label = SecondaryLabel(titleText: "", color: .white, labelFont: .jostRegular50() ?? UIFont())
         label.textAlignment = .center
-        label.textColor = .white
-        label.font = .jostRegular50()
-        self.loginPageModel.updateTime = { [ self ] in timeLabel.text = loginPageModel.time }
         return label
     }()
-    
+    // date label
     private lazy var dateLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
+        let label = SecondaryLabel(titleText: "", color: .white, labelFont: .jostRegular14() ?? UIFont())
         label.textAlignment = .center
-        label.textColor = .white
-        label.font = .jostRegular14()
-        self.loginPageModel.updateDate = { [ self ] in dateLabel.text = loginPageModel.date }
         return label
     }()
+
     // MARK: EmailTextField
-    private lazy var emailTextField = LoginDisplayTextField(placeholdere: KeysForView.email)
+    private lazy var emailTextField: UITextField = {
+        let textField = LoginDisplayTextField(placeholdere: KeysForView.email)
+        textField.addTarget(self, action: #selector(textFieldsIsEmptyCheck), for: .editingChanged)
+        return textField
+    }()
     // MARK: PasswordTextField
     private lazy var passwordTextField: UITextField = {
        let textField = LoginDisplayTextField(placeholdere: KeysForView.password)
         textField.isSecureTextEntry = true
+        textField.addTarget(self, action: #selector(textFieldsIsEmptyCheck), for: .editingChanged)
         return textField
     }()
     // MARK: Login Button
@@ -78,11 +76,27 @@ class LoginPageVc: UIViewController {
          let nextVC = RegistrationVc()
          navigationController?.pushViewController(nextVC, animated: true)
     }
-    //MARK: Hide keyboard
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesBegan(touches, with: event)
-        view.endEditing(true)
+    @objc func textFieldsIsEmptyCheck() {
+        let isEmpty = (emailTextField.text?.isEmpty ?? true) || (passwordTextField.text?.isEmpty ?? true)
+        if !isEmpty {
+              loginButton.isEnabled = true
+           } else {
+               loginButton.isEnabled = false
+           }
     }
+    // Update date and time
+    private func updateTime() {
+        self.loginPageModel.updateTime = { [ self ] in
+            DispatchQueue.main.async {
+                self.timeLabel.text = self.loginPageModel.time
+            }
+        }
+            self.loginPageModel.updateDate = { [ self ] in
+                DispatchQueue.main.async {
+                    self.dateLabel.text = self.loginPageModel.date
+                }
+            }
+        }
     //MARK: Start func for showed time
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -93,6 +107,8 @@ class LoginPageVc: UIViewController {
         super.viewDidLoad()
         addView()
         constraints()
+        addTapGestureToHideKeyboard()
+        updateTime()
     }
     // MARK: Stop timer
     override func viewWillDisappear(_ animated: Bool) {

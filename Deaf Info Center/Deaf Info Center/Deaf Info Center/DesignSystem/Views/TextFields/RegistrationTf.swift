@@ -8,11 +8,12 @@
 import UIKit
 
 final class RegistrationTextField: UITextField {
-    init() {
+    var placeholdere: String?
+    init(placeholdere: String) {
+        self.placeholdere = placeholdere
         super.init(frame: .zero)
-        setTextField()
+        setTextField(placeholdere: placeholdere)
     }
-    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -26,8 +27,10 @@ final class RegistrationTextField: UITextField {
 }
 
 private extension RegistrationTextField {
-    private func setTextField() {
+    private func setTextField(placeholdere: String) {
         self.textColor = .eerieBlack
+        self.attributedPlaceholder = NSAttributedString(string: placeholdere,
+                                                        attributes: [NSAttributedString.Key.foregroundColor: UIColor.eerieBlackAlpha50])
         self.font = .jostRegular20()
         self.textAlignment = .left
         self.addSubview(separatorView)

@@ -31,6 +31,7 @@ private extension SecondaryLabel {
         self.text = titleText
         self.textColor = color
         self.font = labelFont
+        self.numberOfLines = 0
         self.textAlignment = .left
         self.translatesAutoresizingMaskIntoConstraints = false
     }

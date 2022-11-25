@@ -27,6 +27,7 @@
 		ED0FC0F729267B8000669798 /* LoginDisplayTf.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0FC0F629267B8000669798 /* LoginDisplayTf.swift */; };
 		ED0FC0FA2926937700669798 /* KeysForView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0FC0F92926937700669798 /* KeysForView.swift */; };
 		ED0FC0FC2926944600669798 /* Jost-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ED0FC0FB2926944600669798 /* Jost-Medium.ttf */; };
+		ED4DD348292F6B04002FE2D8 /* CheckRegistrFormService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4DD347292F6B04002FE2D8 /* CheckRegistrFormService.swift */; };
 		ED528F68292E61B400857B94 /* UIViewController + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED528F67292E61B400857B94 /* UIViewController + Extension.swift */; };
 		ED528F6A292E622800857B94 /* UIView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED528F69292E622800857B94 /* UIView + Extension.swift */; };
 		ED528F6C292E6DF200857B94 /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED528F6B292E6DF200857B94 /* ShadowView.swift */; };
@@ -66,6 +67,7 @@
 		ED0FC0F629267B8000669798 /* LoginDisplayTf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginDisplayTf.swift; sourceTree = "<group>"; };
 		ED0FC0F92926937700669798 /* KeysForView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeysForView.swift; sourceTree = "<group>"; };
 		ED0FC0FB2926944600669798 /* Jost-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Jost-Medium.ttf"; sourceTree = "<group>"; };
+		ED4DD347292F6B04002FE2D8 /* CheckRegistrFormService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckRegistrFormService.swift; sourceTree = "<group>"; };
 		ED528F67292E61B400857B94 /* UIViewController + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Extension.swift"; sourceTree = "<group>"; };
 		ED528F69292E622800857B94 /* UIView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Extension.swift"; sourceTree = "<group>"; };
 		ED528F6B292E6DF200857B94 /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
@@ -252,6 +254,7 @@
 		ED0FC0F029263EB400669798 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				ED4DD346292F6AB8002FE2D8 /* CheckServices */,
 				ED0FC0F129263ECA00669798 /* GetTimeService */,
 			);
 			path = Services;
@@ -282,6 +285,14 @@
 				ED0FC0DF2926350300669798 /* KeysForImage.swift */,
 			);
 			path = KeysForViews;
+			sourceTree = "<group>";
+		};
+		ED4DD346292F6AB8002FE2D8 /* CheckServices */ = {
+			isa = PBXGroup;
+			children = (
+				ED4DD347292F6B04002FE2D8 /* CheckRegistrFormService.swift */,
+			);
+			path = CheckServices;
 			sourceTree = "<group>";
 		};
 		EDC0DA702928DBF400AB7E34 /* View */ = {
@@ -397,6 +408,7 @@
 				ED0FC0C0292632F800669798 /* SceneDelegate.swift in Sources */,
 				ED528F68292E61B400857B94 /* UIViewController + Extension.swift in Sources */,
 				ED0FC0D42926345100669798 /* Constant.swift in Sources */,
+				ED4DD348292F6B04002FE2D8 /* CheckRegistrFormService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
