@@ -35,6 +35,10 @@ enum KeysForView {
     static let checkYourEmailAndPass = "Emailul sau parola nu sunt conforme cu regulile"
     static let stepForEmailPassCheck = "1. Verifică e-mailul\n2. Verifică parola introdusă"
     static let fillRedFields = "Completați căsuțele roșii"
+    static let specifyTheDegree = "Specificați gradul:"
+    static let severeDegree = "Grad sever"
+    static let accentuatedDegree = "Grad accentuat"
+    static let mediumDegree = "Grad mediu"
 }
 
 

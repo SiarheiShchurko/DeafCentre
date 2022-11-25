@@ -10,18 +10,22 @@ import Foundation
 protocol RegistrationModelProtocol: AnyObject {
     func checkEmailAndPassword(email: String?, password: String?)
     var sexArray: [String] { get }
+    var degreeSpecifyArray: [ String ] { get }
     var update: (() -> Void)? { get set }
     var updateError: (() -> Void)? { get set }
 }
 // MARK: RegistrationModel class
 final class RegistrationModel: RegistrationModelProtocol {
+   
+    
     // Check Service
     let checkRegistrFormService: CheckRegistrationFormProtocol = CheckRegistrationFormService()
     // Update information funcs
     var update: (() -> Void)?
     var updateError: (() -> Void)?
     // Array for changed sex
-    var sexArray = [ KeysForView.man, KeysForView.woman ]
+    var sexArray: [String] = [ KeysForView.man, KeysForView.woman ]
+    var degreeSpecifyArray: [String] = [ KeysForView.severeDegree, KeysForView.accentuatedDegree, KeysForView.mediumDegree ]
     // Func who start service check
     func checkEmailAndPassword(email: String?, password: String?) {
         let emailIsValid = checkRegistrFormService.isValidEmail(email: email ?? "")

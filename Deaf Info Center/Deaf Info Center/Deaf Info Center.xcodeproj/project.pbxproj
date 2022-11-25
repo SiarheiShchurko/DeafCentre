@@ -27,6 +27,7 @@
 		ED0FC0F729267B8000669798 /* LoginDisplayTf.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0FC0F629267B8000669798 /* LoginDisplayTf.swift */; };
 		ED0FC0FA2926937700669798 /* KeysForView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0FC0F92926937700669798 /* KeysForView.swift */; };
 		ED0FC0FC2926944600669798 /* Jost-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ED0FC0FB2926944600669798 /* Jost-Medium.ttf */; };
+		ED2802DA2930FD6B003971DD /* UITextField + extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2802D92930FD6B003971DD /* UITextField + extension.swift */; };
 		ED4DD348292F6B04002FE2D8 /* CheckRegistrFormService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4DD347292F6B04002FE2D8 /* CheckRegistrFormService.swift */; };
 		ED528F68292E61B400857B94 /* UIViewController + extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED528F67292E61B400857B94 /* UIViewController + extension.swift */; };
 		ED528F6A292E622800857B94 /* UIView + extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED528F69292E622800857B94 /* UIView + extension.swift */; };
@@ -67,6 +68,7 @@
 		ED0FC0F629267B8000669798 /* LoginDisplayTf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginDisplayTf.swift; sourceTree = "<group>"; };
 		ED0FC0F92926937700669798 /* KeysForView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeysForView.swift; sourceTree = "<group>"; };
 		ED0FC0FB2926944600669798 /* Jost-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Jost-Medium.ttf"; sourceTree = "<group>"; };
+		ED2802D92930FD6B003971DD /* UITextField + extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField + extension.swift"; sourceTree = "<group>"; };
 		ED4DD347292F6B04002FE2D8 /* CheckRegistrFormService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckRegistrFormService.swift; sourceTree = "<group>"; };
 		ED528F67292E61B400857B94 /* UIViewController + extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + extension.swift"; sourceTree = "<group>"; };
 		ED528F69292E622800857B94 /* UIView + extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + extension.swift"; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 				ED0FC0D72926348800669798 /* UIColor + exstension.swift */,
 				ED528F67292E61B400857B94 /* UIViewController + extension.swift */,
 				ED528F69292E622800857B94 /* UIView + extension.swift */,
+				ED2802D92930FD6B003971DD /* UITextField + extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -405,6 +408,7 @@
 				EDC0DA722928DC2700AB7E34 /* CornerAngleView.swift in Sources */,
 				ED0FC0DD292634D800669798 /* LoginPageVc.swift in Sources */,
 				ED059A792927D9C200077B73 /* RegistrationVc.swift in Sources */,
+				ED2802DA2930FD6B003971DD /* UITextField + extension.swift in Sources */,
 				ED0FC0C0292632F800669798 /* SceneDelegate.swift in Sources */,
 				ED528F68292E61B400857B94 /* UIViewController + extension.swift in Sources */,
 				ED0FC0D42926345100669798 /* Constant.swift in Sources */,

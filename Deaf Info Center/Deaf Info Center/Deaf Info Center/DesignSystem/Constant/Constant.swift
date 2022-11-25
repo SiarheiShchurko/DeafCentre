@@ -48,6 +48,7 @@ enum LayoutConstants {
     static let inset49: CGFloat = 49.0
     static let inset50: CGFloat = 50.0
     static let inset52: CGFloat = 52.0
+    static let inset53: CGFloat = 53.0
     static let inset55: CGFloat = 55.0
     static let inset56: CGFloat = 56.0
     static let inset58: CGFloat = 58.0
@@ -101,7 +102,7 @@ enum LayoutConstants {
     static let height270: CGFloat = 270.0
     static let height371: CGFloat = 371.0
     static let height375: CGFloat = 375.0
-    static let height1500: CGFloat = 1500.0
+    static let height1350: CGFloat = 1350.0
     // MARK: - Width
     static let displayWidth: CGFloat = UIScreen.main.bounds.width
     static let width0: CGFloat = 0

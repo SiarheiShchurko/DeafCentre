@@ -10,19 +10,21 @@ import UIKit
 final class RegistrationVc: UIViewController {
     // MARK: Model
     private let registrationModel: RegistrationModelProtocol = RegistrationModel()
-    // MARK: HeaderView
-    private lazy var headerView = OneCornerRadiusView()
+   
     // MARK: Percent height disp which taken header view
     private let percentHeightTaken = 0.38
-    // MARK: ClearView
+    // MARK: View
+    // Header
+    private lazy var headerView = OneCornerRadiusView()
+    // ClearView
     private let clearView: UIView = {
         let view = UIView()
         view.backgroundColor = .clear
         return view
     }()
-    // MARK: ScroolView
+    // ScroolView
     private lazy var scrollView = UIScrollView()
-    // MARK: ContainerView
+    // ContainerView
     private lazy var containerView: UIView = {
         let view = UIView()
         view.layer.cornerRadius = LayoutConstants.inset20
@@ -30,9 +32,34 @@ final class RegistrationVc: UIViewController {
         view.backgroundColor = .white
         return view
     }()
-    // MARK: Inregistrare label (on header view)
+    // Picker view change your sex
+    private lazy var changeYourSexPicker: UIPickerView = {
+        let picker = UIPickerView()
+        self.sexulTf.inputView = picker
+        return picker
+}()
+    // Picker view change hearing degree
+    private lazy var hearingImpairePicker: UIPickerView = {
+        let picker = UIPickerView()
+        self.hearingImpaireTf.inputView = picker
+        return picker
+    }()
+    // Date picker setting
+    private func datePickerSet() {
+        if #available(iOS 13.4, *) {
+            let datePicker = UIDatePicker()
+                datePicker.preferredDatePickerStyle = .wheels
+                datePicker.datePickerMode = .date
+                datePicker.maximumDate = Date()
+                datePicker.addTarget(self, action: #selector(datePickerChanged(_:)), for: .valueChanged)
+                dateOfBirthTf.inputView = datePicker
+            }
+        }
+    // Separator
+    private let separatorView = SeparatorView(color: .borderGrayColor)
+    
+    // MARK: Labels
     private let inregistrareLabel = HeaderLabel(text: KeysForView.inregistrare)
-    // MARK: Labels for registration
     private let nameLabel = RegistrationTfLabel(titleText: KeysForView.name, redStar: KeysForSymbols.star)
     private let preNameLabel = RegistrationTfLabel(titleText: KeysForView.preNume, redStar: KeysForSymbols.star)
     private let sexulLabel = RegistrationTfLabel(titleText: KeysForView.sex, redStar: KeysForSymbols.star)
@@ -46,8 +73,8 @@ final class RegistrationVc: UIViewController {
     let passwordRulesLabel = SecondaryLabel(titleText: KeysForView.passwordRules, color: .eerieBlackAlpha50, labelFont: .jostRegular14() ?? UIFont())
     // Personal Checkbox label
     private let personalLabel = SecondaryLabel(titleText: KeysForView.hearingImpairedPerson, color: .black, labelFont: UIFont.jostRegular16() ?? UIFont())
-  
-   // Agreenment Checkbox Label
+    
+    // Agreenment Checkbox Label
     private let agreenementLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -55,7 +82,7 @@ final class RegistrationVc: UIViewController {
         let attstroke = NSMutableAttributedString(string: KeysForView.checkBoxAgreement)
         attstroke.addAttributes([.foregroundColor : UIColor.black], range: NSRange(location: 0, length: 16))
         attstroke.addAttributes([.foregroundColor : UIColor.purpoureLight,
-                                     .underlineColor : UIColor.purpoureLight,
+                                 .underlineColor : UIColor.purpoureLight,
                                  .underlineStyle : NSUnderlineStyle.single.rawValue], range: NSRange(location: 17, length: 22))
         attstroke.addAttributes([.foregroundColor : UIColor.black], range: NSRange(location: 39, length: 10))
         label.font = UIFont.jostRegular16()
@@ -65,11 +92,11 @@ final class RegistrationVc: UIViewController {
     }()
     // Change lang label (under separatop)
     private let changeLanguageLabel = SecondaryLabel(titleText: KeysForView.changeLanguage, color: .black, labelFont: UIFont.jostMedium20() ?? UIFont())
-        // Radio label
-        private let romanianLangLabel = SecondaryLabel(titleText: KeysForView.romanian, color: .black, labelFont: UIFont.jostRegular17() ?? UIFont())
-        // Radio label
-        private let russianLangLabel = SecondaryLabel(titleText: KeysForView.russion, color: .black, labelFont: .jostRegular17() ?? UIFont())
-    // MARK: TextFields for registration
+    // Radio label
+    private let romanianLangLabel = SecondaryLabel(titleText: KeysForView.romanian, color: .black, labelFont: UIFont.jostRegular17() ?? UIFont())
+    // Radio label
+    private let russianLangLabel = SecondaryLabel(titleText: KeysForView.russion, color: .black, labelFont: .jostRegular17() ?? UIFont())
+    // MARK: TextFields
     private let nameTextField: RegistrationTextField = {
         let textField = RegistrationTextField(placeholdere: "")
         textField.addTarget(self, action: #selector(enteredFormatTf(sender:)), for: .editingChanged)
@@ -84,7 +111,7 @@ final class RegistrationVc: UIViewController {
     private let dateOfBirthTf: UITextField = {
         let textField = RegistrationTextField(placeholdere: KeysForView.dateFormat)
         return textField
-    }()    
+    }()
     private let emailTf = RegistrationTextField(placeholdere: KeysForView.emailExample)
     private let passwordTf: RegistrationTextField = {
         let textField = RegistrationTextField(placeholdere: KeysForView.passwordExample)
@@ -94,18 +121,22 @@ final class RegistrationVc: UIViewController {
     }()
     private let adressTf = RegistrationTextField(placeholdere: "")
     private let professionTf = RegistrationTextField(placeholdere: "")
-                                                     
+    private let hearingImpaireTf: UITextField = {
+        let textField = RegistrationTextField(placeholdere: KeysForView.specifyTheDegree)
+        textField.isHidden = true
+        return textField
+    }()
     // MARK: Buttons
     // Back Button Item
     private let backButtonItem: BackButtonItem = {
-      let button = BackButtonItem()
+        let button = BackButtonItem()
         button.addTarget(self, action: #selector(popVc), for: .touchUpInside)
         return button
     }()
     // personal checkBox Button
     let personalCheckbox: CheckboxButton = {
         let button = CheckboxButton()
-       // button.addTarget(self, action: #selector(checkTextField), for: .touchUpInside)
+        button.addTarget(self, action: #selector(activateHearingDegreePunct(sender:)), for: .touchUpInside)
         return button
     }()
     // agree checkBox Button
@@ -133,36 +164,15 @@ final class RegistrationVc: UIViewController {
         button.addTarget(self, action: #selector(registrationAction), for: .touchUpInside)
         return button
     }()
-    //Arrow down on sex text field
+    //Chevron down on sex text field
     private let downArrowButton = BasicImageButton(image: UIImage(named: KeysForImage.downArrowFigma) ?? UIImage())
     //Date picker (Date of birth TF)
-    private lazy var dateOfBirthButton: UIButton = {
-        let button = BasicImageButton(image: UIImage(named: KeysForImage.datePickerFigma) ?? UIImage())
-        return button
-    }()
-    // Arrow on sentFormButton
-    private let arrowSentFormButton = BasicImageButton(image: UIImage(named: KeysForImage.rightArrowFigma) ?? UIImage())
-    // Picker view change your sex
-    private func changeYourSex() {
-        let picker = UIPickerView()
-        picker.delegate = self
-        picker.dataSource = self
-        sexulTf.inputView = picker
-    }
-    // Date picker setting
-    private func datePickerSet() {
-        if #available(iOS 13.4, *) {
-            let datePicker = UIDatePicker()
-                datePicker.preferredDatePickerStyle = .wheels
-                datePicker.datePickerMode = .date
-                datePicker.maximumDate = Date()
-                datePicker.addTarget(self, action: #selector(datePickerChanged(_:)), for: .valueChanged)
-                dateOfBirthTf.inputView = datePicker
-            }
-        }
-    //MARK: Separator
-    private let separatorView = SeparatorView(color: .borderGrayColor)
+    private lazy var dateOfBirthButton = BasicImageButton(image: UIImage(named: KeysForImage.datePickerFigma) ?? UIImage())
     // MARK: Actions
+    // Activate hearind degree textField
+    @objc private func activateHearingDegreePunct(sender: UIButton) {
+        sender.isSelected ? (hearingImpaireTf.isHidden = false) : (hearingImpaireTf.isHidden = true)
+    }
     // Input limits for Text Field
     @objc private func enteredFormatTf(sender: UITextField) {
         guard let text = sender.text?.lowercased() else { return }
@@ -175,7 +185,8 @@ final class RegistrationVc: UIViewController {
     }
     // TF is empty? (red bordered)
     @objc private func checkTextField() -> Bool {
-        let textFieldArray = [nameTextField, preNameTf, sexulTf, dateOfBirthTf, emailTf, passwordTf, adressTf]
+        var textFieldArray = [nameTextField, preNameTf, sexulTf, dateOfBirthTf, emailTf, passwordTf, adressTf]
+        personalCheckbox.isSelected ? (textFieldArray.append(hearingImpaireTf)) : print("")
         lazy var result: Bool = true
         textFieldArray.forEach({ [ weak self ] textField in
             guard let self = self else { return }
@@ -189,6 +200,7 @@ final class RegistrationVc: UIViewController {
     // If user agree rules - regButton will stand active
     @objc private func agreeToTheTermsCheckBox() {
         agreementCheckbox.isSelected ? (registrateButton.isEnabled = true) : (registrateButton.isEnabled = false)
+        constraints()
     }
     // Action done for tool bar button
     @objc private func doneAction() {
@@ -257,6 +269,7 @@ final class RegistrationVc: UIViewController {
         passwordTf.inputAccessoryView = toolBar
         adressTf.inputAccessoryView = toolBar
         professionTf.inputAccessoryView = toolBar
+        hearingImpaireTf.inputAccessoryView = toolBar
     }
     // Check result (email, password)
     private func checkEmailAndPass() {
@@ -332,6 +345,7 @@ final class RegistrationVc: UIViewController {
         containerView.addSubview(russianLangLabel)
         containerView.addSubview(romanianLangLabel)
         containerView.addSubview(registrateButton)
+        containerView.addSubview(hearingImpaireTf)
         sexulTf.addSubview(downArrowButton)
         dateOfBirthTf.addSubview(dateOfBirthButton)
       
@@ -341,32 +355,34 @@ final class RegistrationVc: UIViewController {
         super.viewDidLayoutSubviews()
         clearView.frame = CGRect(x: LayoutConstants.inset0, y: inregistrareLabel.frame.maxY + LayoutConstants.inset16, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
         scrollView.frame = clearView.bounds
-        containerView.frame = CGRect(x: LayoutConstants.inset16, y: LayoutConstants.inset0, width: (UIScreen.main.bounds.width - LayoutConstants.inset32), height: LayoutConstants.height1500)
-        scrollView.contentSize = CGSize(width: (UIScreen.main.bounds.width), height: LayoutConstants.height1500)
-        // Name
-        nameLabel.frame = CGRect(x: LayoutConstants.inset22, y: LayoutConstants.inset16, width: (LayoutConstants.displayWidth - LayoutConstants.width44), height: LayoutConstants.height48)
+        containerView.frame = CGRect(x: LayoutConstants.inset16, y: LayoutConstants.inset0, width: (UIScreen.main.bounds.width - LayoutConstants.inset32), height: LayoutConstants.height1350)
+        scrollView.contentSize = CGSize(width: (UIScreen.main.bounds.width), height: LayoutConstants.height1350)
+       
+        nameLabel.frame = CGRect(x: LayoutConstants.inset22, y: LayoutConstants.inset16, width: (LayoutConstants.displayWidth - LayoutConstants.width44), height: LayoutConstants.height20)
         nameTextField.frame = CGRect(x: LayoutConstants.inset22, y: nameLabel.frame.maxY + LayoutConstants.inset1, width: LayoutConstants.displayWidth - LayoutConstants.width76 , height: LayoutConstants.height48)
         // Prename
-        preNameLabel.frame = CGRect(x: LayoutConstants.inset22, y: nameTextField.frame.maxY + LayoutConstants.inset8, width: (LayoutConstants.displayWidth - LayoutConstants.width44), height: LayoutConstants.height48)
+        preNameLabel.frame = CGRect(x: LayoutConstants.inset22, y: nameTextField.frame.maxY + LayoutConstants.inset8, width: (LayoutConstants.displayWidth - LayoutConstants.width44), height: LayoutConstants.height32)
         preNameTf.frame = CGRect(x: LayoutConstants.inset22, y: preNameLabel.frame.maxY + LayoutConstants.inset1, width: LayoutConstants.displayWidth - LayoutConstants.width76 , height: LayoutConstants.height48)
         // Sex
-        sexulLabel.frame = CGRect(x: LayoutConstants.inset22, y: preNameTf.frame.maxY + LayoutConstants.inset8, width: (LayoutConstants.displayWidth - LayoutConstants.width44), height: LayoutConstants.height48)
+        sexulLabel.frame = CGRect(x: LayoutConstants.inset22, y: preNameTf.frame.maxY + LayoutConstants.inset8, width: (LayoutConstants.displayWidth - LayoutConstants.width44), height: LayoutConstants.height32)
         sexulTf.frame = CGRect(x: LayoutConstants.inset22, y: sexulLabel.frame.maxY + LayoutConstants.inset1, width: LayoutConstants.displayWidth - LayoutConstants.width76 , height: LayoutConstants.height48)
         // Birth date
-        dateOfBirthLabel.frame = CGRect(x: LayoutConstants.inset22, y: sexulTf.frame.maxY + LayoutConstants.inset8, width: (LayoutConstants.displayWidth - LayoutConstants.width44), height: LayoutConstants.height48)
+        dateOfBirthLabel.frame = CGRect(x: LayoutConstants.inset22, y: sexulTf.frame.maxY + LayoutConstants.inset8, width: (LayoutConstants.displayWidth - LayoutConstants.width44), height: LayoutConstants.height32)
         dateOfBirthTf.frame = CGRect(x: LayoutConstants.inset22, y: dateOfBirthLabel.frame.maxY + LayoutConstants.inset1, width: LayoutConstants.displayWidth - LayoutConstants.width76 , height: LayoutConstants.height48)
         // Email
-        emailLabel.frame = CGRect(x: LayoutConstants.inset22, y: dateOfBirthTf.frame.maxY + LayoutConstants.inset8, width: (LayoutConstants.displayWidth - LayoutConstants.width44), height: LayoutConstants.height48)
+        emailLabel.frame = CGRect(x: LayoutConstants.inset22, y: dateOfBirthTf.frame.maxY + LayoutConstants.inset8, width: (LayoutConstants.displayWidth - LayoutConstants.width44), height: LayoutConstants.height32)
         emailTf.frame = CGRect(x: LayoutConstants.inset22, y: emailLabel.frame.maxY + LayoutConstants.inset1, width: LayoutConstants.displayWidth - LayoutConstants.width76 , height: LayoutConstants.height48)
         // Password
-        passwordLabel.frame = CGRect(x: LayoutConstants.inset22, y: emailTf.frame.maxY + LayoutConstants.inset8, width: (LayoutConstants.displayWidth - LayoutConstants.width44), height: LayoutConstants.height48)
+        passwordLabel.frame = CGRect(x: LayoutConstants.inset22, y: emailTf.frame.maxY + LayoutConstants.inset8, width: (LayoutConstants.displayWidth - LayoutConstants.width44), height: LayoutConstants.height32)
         passwordTf.frame = CGRect(x: LayoutConstants.inset22, y: passwordLabel.frame.maxY + LayoutConstants.inset1, width: LayoutConstants.displayWidth - LayoutConstants.width76 , height: LayoutConstants.height48)
          // Adress
-        adressLabel.frame = CGRect(x: LayoutConstants.inset22, y: passwordRulesLabel.frame.maxY + LayoutConstants.inset8, width: (LayoutConstants.displayWidth - LayoutConstants.width44), height: LayoutConstants.height48)
+        adressLabel.frame = CGRect(x: LayoutConstants.inset22, y: passwordRulesLabel.frame.maxY + LayoutConstants.inset8, width: (LayoutConstants.displayWidth - LayoutConstants.width44), height: LayoutConstants.height32)
         adressTf.frame = CGRect(x: LayoutConstants.inset22, y: adressLabel.frame.maxY + LayoutConstants.inset1, width: LayoutConstants.displayWidth - LayoutConstants.width76 , height: LayoutConstants.height48)
         // Profession
-        professionLabel.frame = CGRect(x: LayoutConstants.inset22, y: adressTf.frame.maxY + LayoutConstants.inset8, width: (LayoutConstants.displayWidth - LayoutConstants.width44), height: LayoutConstants.height48)
+        professionLabel.frame = CGRect(x: LayoutConstants.inset22, y: adressTf.frame.maxY + LayoutConstants.inset8, width: (LayoutConstants.displayWidth - LayoutConstants.width44), height: LayoutConstants.height32)
         professionTf.frame = CGRect(x: LayoutConstants.inset22, y: professionLabel.frame.maxY + LayoutConstants.inset1, width: LayoutConstants.displayWidth - LayoutConstants.width76 , height: LayoutConstants.height48)
+        // Specify the degree textfield
+        hearingImpaireTf.frame = CGRect(x: LayoutConstants.inset22, y: personalLabel.frame.maxY + LayoutConstants.inset2, width: (LayoutConstants.displayWidth - LayoutConstants.width76), height: LayoutConstants.height48)
     }
     // View did load
     override func viewDidLoad() {
@@ -375,12 +391,15 @@ final class RegistrationVc: UIViewController {
         addView()
         constraints()
         datePickerSet()
-        changeYourSex()
         toolBarSet()
         addTapGestureToHideKeyboard()
         checkEmailAndPass()
+        changeYourSexPicker.delegate = self
+        changeYourSexPicker.dataSource = self
+        hearingImpairePicker.delegate = self
+        hearingImpairePicker.dataSource = self
     }
-    
+    // MARK: Migrations Constraints
     // MARK: Constraints
     private func constraints() {
         NSLayoutConstraint.activate([
@@ -406,8 +425,7 @@ final class RegistrationVc: UIViewController {
             personalCheckbox.leadingAnchor.constraint(equalTo: professionTf.leadingAnchor),
             personalCheckbox.widthAnchor.constraint(equalToConstant: LayoutConstants.width22),
             personalCheckbox.heightAnchor.constraint(equalToConstant: LayoutConstants.height22),
-            // Agreenement label
-            agreenementLabel.topAnchor.constraint(equalTo: personalCheckbox.bottomAnchor, constant: LayoutConstants.inset40),
+            agreenementLabel.topAnchor.constraint(equalTo: personalLabel.bottomAnchor, constant: LayoutConstants.inset55),
             agreenementLabel.leadingAnchor.constraint(equalTo: personalLabel.leadingAnchor),
             agreenementLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -LayoutConstants.inset72),
             // Agreenement Checkbox
@@ -449,8 +467,6 @@ final class RegistrationVc: UIViewController {
             registrateButton.heightAnchor.constraint(equalToConstant: LayoutConstants.height50),
             downArrowButton.centerYAnchor.constraint(equalTo: sexulTf.centerYAnchor),
             downArrowButton.trailingAnchor.constraint(equalTo: sexulTf.trailingAnchor, constant: -LayoutConstants.inset20),
-            arrowSentFormButton.heightAnchor.constraint(equalToConstant: LayoutConstants.height6),
-            arrowSentFormButton.widthAnchor.constraint(equalToConstant: LayoutConstants.width12),
             // DatePicker button on BirthTF
             dateOfBirthButton.centerYAnchor.constraint(equalTo: dateOfBirthTf.centerYAnchor),
             dateOfBirthButton.trailingAnchor.constraint(equalTo: dateOfBirthTf.trailingAnchor, constant: -LayoutConstants.inset20),
@@ -459,7 +475,7 @@ final class RegistrationVc: UIViewController {
             // Arrow right (on "sent form" button)
             passwordRulesLabel.topAnchor.constraint(equalTo: passwordTf.bottomAnchor, constant: LayoutConstants.inset1),
             passwordRulesLabel.leadingAnchor.constraint(equalTo: passwordTf.leadingAnchor),
-            passwordRulesLabel.trailingAnchor.constraint(equalTo: passwordTf.trailingAnchor)
+            passwordRulesLabel.trailingAnchor.constraint(equalTo: passwordTf.trailingAnchor),
         ])
     }
 }
@@ -468,17 +484,36 @@ final class RegistrationVc: UIViewController {
 // Delegate and Data Source for Picker view
 extension RegistrationVc: UIPickerViewDelegate, UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        
         return Int(LayoutConstants.inset1)
     }
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        registrationModel.sexArray.count
+        switch pickerView {
+        case changeYourSexPicker:
+            return registrationModel.sexArray.count
+        case hearingImpairePicker:
+            return registrationModel.degreeSpecifyArray.count
+        default: break
+        }
+        return Int(LayoutConstants.inset0)
     }
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return registrationModel.sexArray[row]
+        switch pickerView {
+        case changeYourSexPicker:
+            return registrationModel.sexArray[row]
+        case hearingImpairePicker:
+            return registrationModel.degreeSpecifyArray[row]
+        default: break
+        }
+        return ""
     }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        self.sexulTf.text = self.registrationModel.sexArray[row]
+        switch pickerView {
+        case changeYourSexPicker:
+            self.sexulTf.text = self.registrationModel.sexArray[row]
+        case hearingImpairePicker:
+            self.hearingImpaireTf.text = self.registrationModel.degreeSpecifyArray[row]
+        default: break
+        }
     }
 }
 
