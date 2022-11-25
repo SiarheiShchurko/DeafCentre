@@ -28,8 +28,8 @@
 		ED0FC0FA2926937700669798 /* KeysForView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0FC0F92926937700669798 /* KeysForView.swift */; };
 		ED0FC0FC2926944600669798 /* Jost-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ED0FC0FB2926944600669798 /* Jost-Medium.ttf */; };
 		ED4DD348292F6B04002FE2D8 /* CheckRegistrFormService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4DD347292F6B04002FE2D8 /* CheckRegistrFormService.swift */; };
-		ED528F68292E61B400857B94 /* UIViewController + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED528F67292E61B400857B94 /* UIViewController + Extension.swift */; };
-		ED528F6A292E622800857B94 /* UIView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED528F69292E622800857B94 /* UIView + Extension.swift */; };
+		ED528F68292E61B400857B94 /* UIViewController + extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED528F67292E61B400857B94 /* UIViewController + extension.swift */; };
+		ED528F6A292E622800857B94 /* UIView + extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED528F69292E622800857B94 /* UIView + extension.swift */; };
 		ED528F6C292E6DF200857B94 /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED528F6B292E6DF200857B94 /* ShadowView.swift */; };
 		ED528F6E292E840300857B94 /* SeparatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED528F6D292E840300857B94 /* SeparatorView.swift */; };
 		ED53E4AC292BA6B80005D51B /* CheckBoxButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED53E4AB292BA6B80005D51B /* CheckBoxButton.swift */; };
@@ -68,8 +68,8 @@
 		ED0FC0F92926937700669798 /* KeysForView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeysForView.swift; sourceTree = "<group>"; };
 		ED0FC0FB2926944600669798 /* Jost-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Jost-Medium.ttf"; sourceTree = "<group>"; };
 		ED4DD347292F6B04002FE2D8 /* CheckRegistrFormService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckRegistrFormService.swift; sourceTree = "<group>"; };
-		ED528F67292E61B400857B94 /* UIViewController + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Extension.swift"; sourceTree = "<group>"; };
-		ED528F69292E622800857B94 /* UIView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Extension.swift"; sourceTree = "<group>"; };
+		ED528F67292E61B400857B94 /* UIViewController + extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + extension.swift"; sourceTree = "<group>"; };
+		ED528F69292E622800857B94 /* UIView + extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + extension.swift"; sourceTree = "<group>"; };
 		ED528F6B292E6DF200857B94 /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
 		ED528F6D292E840300857B94 /* SeparatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeparatorView.swift; sourceTree = "<group>"; };
 		ED53E4AB292BA6B80005D51B /* CheckBoxButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxButton.swift; sourceTree = "<group>"; };
@@ -159,8 +159,8 @@
 			children = (
 				ED0FC0D62926348800669798 /* UIFont + extension.swift */,
 				ED0FC0D72926348800669798 /* UIColor + exstension.swift */,
-				ED528F67292E61B400857B94 /* UIViewController + Extension.swift */,
-				ED528F69292E622800857B94 /* UIView + Extension.swift */,
+				ED528F67292E61B400857B94 /* UIViewController + extension.swift */,
+				ED528F69292E622800857B94 /* UIView + extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -397,7 +397,7 @@
 				ED0FC0E62926350C00669798 /* BasicButtonWithImage.swift in Sources */,
 				ED82906E292D09C700DD6233 /* RadioButton.swift in Sources */,
 				ED528F6E292E840300857B94 /* SeparatorView.swift in Sources */,
-				ED528F6A292E622800857B94 /* UIView + Extension.swift in Sources */,
+				ED528F6A292E622800857B94 /* UIView + extension.swift in Sources */,
 				ED0FC0BE292632F800669798 /* AppDelegate.swift in Sources */,
 				ED0FC0E02926350300669798 /* KeysForImage.swift in Sources */,
 				ED528F6C292E6DF200857B94 /* ShadowView.swift in Sources */,
@@ -406,7 +406,7 @@
 				ED0FC0DD292634D800669798 /* LoginPageVc.swift in Sources */,
 				ED059A792927D9C200077B73 /* RegistrationVc.swift in Sources */,
 				ED0FC0C0292632F800669798 /* SceneDelegate.swift in Sources */,
-				ED528F68292E61B400857B94 /* UIViewController + Extension.swift in Sources */,
+				ED528F68292E61B400857B94 /* UIViewController + extension.swift in Sources */,
 				ED0FC0D42926345100669798 /* Constant.swift in Sources */,
 				ED4DD348292F6B04002FE2D8 /* CheckRegistrFormService.swift in Sources */,
 			);

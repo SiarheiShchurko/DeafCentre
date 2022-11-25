@@ -17,6 +17,13 @@ final class RegistrationTextField: UITextField {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    // Stop paste
+    override func canPerformAction(_ action: Selector, withSender sender: Any?) -> Bool {
+         if action == #selector(UIResponderStandardEditActions.paste(_:)) {
+             return false
+         }
+         return super.canPerformAction(action, withSender: sender)
+    }
     
     let separatorView: UIView = {
        let view = UIView()
@@ -35,5 +42,15 @@ private extension RegistrationTextField {
         self.textAlignment = .left
         self.addSubview(separatorView)
         self.layer.backgroundColor = UIColor.jacksonsPurpleAlpha21.cgColor
+        self.addTarget(self, action: #selector(removeRedBorders(sender: )), for: .allEvents)
     }
 }
+
+private extension RegistrationTextField {
+    @objc private func removeRedBorders(sender: RegistrationTextField) {
+        if !(sender.text?.isEmpty ?? false) {
+            sender.layer.borderWidth = LayoutConstants.inset0
+        }
+    }
+}
+

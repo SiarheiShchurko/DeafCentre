@@ -45,15 +45,8 @@ final class RegistrationVc: UIViewController {
     // Password rules
     let passwordRulesLabel = SecondaryLabel(titleText: KeysForView.passwordRules, color: .eerieBlackAlpha50, labelFont: .jostRegular14() ?? UIFont())
     // Personal Checkbox label
-    private let personalLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = KeysForView.hearingImpairedPerson
-        label.numberOfLines = 0
-        label.textColor = .black
-        label.font = UIFont.jostRegular16()
-        return label
-    }()
+    private let personalLabel = SecondaryLabel(titleText: KeysForView.hearingImpairedPerson, color: .black, labelFont: UIFont.jostRegular16() ?? UIFont())
+  
    // Agreenment Checkbox Label
     private let agreenementLabel: UILabel = {
         let label = UILabel()
@@ -88,14 +81,15 @@ final class RegistrationVc: UIViewController {
         return textField
     }()
     private let sexulTf = RegistrationTextField(placeholdere: KeysForView.changed)
-    private let dateOfBirthTf = RegistrationTextField(placeholdere: KeysForView.dateFormat)
-    
+    private let dateOfBirthTf: UITextField = {
+        let textField = RegistrationTextField(placeholdere: KeysForView.dateFormat)
+        return textField
+    }()    
     private let emailTf = RegistrationTextField(placeholdere: KeysForView.emailExample)
     private let passwordTf: RegistrationTextField = {
         let textField = RegistrationTextField(placeholdere: KeysForView.passwordExample)
         textField.isSecureTextEntry = true
         textField.textContentType = .oneTimeCode
-        
         return textField
     }()
     private let adressTf = RegistrationTextField(placeholdere: "")
@@ -174,7 +168,7 @@ final class RegistrationVc: UIViewController {
         guard let text = sender.text?.lowercased() else { return }
         let engCharacters = "qwertyuiopasdfghjklzxcvbnm"
         text.forEach { (char) in
-            if !engCharacters.contains(char) {
+            if !engCharacters.contains(char)  {
                 sender.text?.remove(at: text.firstIndex(of: char)!)
             }
         }
@@ -225,12 +219,13 @@ final class RegistrationVc: UIViewController {
     }
     // Action for registration button (Checking email and password correct)
         @objc private func registrationAction() {
-            registrationModel.checkEmailAndPassword(email: emailTf.text, password: passwordTf.text)
+           let isResult = checkTextField()
+            isResult ? registrationModel.checkEmailAndPassword(email: emailTf.text, password: passwordTf.text) : self.emptyFields()
         }
     //MARK: ALERTs
     // Alert if email or pass missing
     private func alertMissEmailOrPass() {
-        let alert = UIAlertController(title: KeysForView.checkYourEmailAndPass, message: KeysForView.stepForEmailPassCheck , preferredStyle: .actionSheet)
+        let alert = UIAlertController(title: KeysForView.checkYourEmailAndPass, message: KeysForView.stepForEmailPassCheck , preferredStyle: .alert)
         let button = UIAlertAction(title: "Ok", style: .default) { _ in
             alert.dismiss(animated: true)
         }
@@ -264,10 +259,9 @@ final class RegistrationVc: UIViewController {
         professionTf.inputAccessoryView = toolBar
     }
     // Check result (email, password)
-    private func checkCorrectTextFieldFill() {
+    private func checkEmailAndPass() {
         registrationModel.update = {
-            let isResult = self.checkTextField()
-            isResult ? self.popVc() : self.emptyFields()
+            self.popVc()
         }
         //Else self.disp called miss alert
         registrationModel.updateError = {
@@ -384,8 +378,9 @@ final class RegistrationVc: UIViewController {
         changeYourSex()
         toolBarSet()
         addTapGestureToHideKeyboard()
-        checkCorrectTextFieldFill()
+        checkEmailAndPass()
     }
+    
     // MARK: Constraints
     private func constraints() {
         NSLayoutConstraint.activate([
@@ -473,6 +468,7 @@ final class RegistrationVc: UIViewController {
 // Delegate and Data Source for Picker view
 extension RegistrationVc: UIPickerViewDelegate, UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        
         return Int(LayoutConstants.inset1)
     }
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
@@ -486,11 +482,7 @@ extension RegistrationVc: UIPickerViewDelegate, UIPickerViewDataSource {
     }
 }
 
-//extension RegistrationVc: UITextViewDelegate {
-//    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-//        <#code#>
-//    }
-//}
+
 
     
 
