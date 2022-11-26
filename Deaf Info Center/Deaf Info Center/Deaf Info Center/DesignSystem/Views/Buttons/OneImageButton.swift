@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-final class BasicImageButton: UIButton {
+final class OneImageButton: UIButton {
     var image: UIImage
     init(image: UIImage) {
         self.image = image
@@ -20,7 +20,7 @@ final class BasicImageButton: UIButton {
         fatalError("init(coder:) has not been implemented")
     }
 }
-private extension BasicImageButton {
+private extension OneImageButton {
     private func setButton(image: UIImage) {
         self.translatesAutoresizingMaskIntoConstraints = false
         self.setImage(image, for: .normal)

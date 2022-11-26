@@ -11,7 +11,7 @@ import Foundation
 class LoginPageVc: UIViewController {
     private let loginPageModel: LoginPageModelProtocol = LoginPageVm()
     
-    let conteinerView = OneCornerRadiusView()
+    let conteinerView = HeaderView()
     // MARK: Fill color between self.view top and safeArea top
     private let purposeTopFillView = PurpouseTopFillView()
     // MARK: TOP HEADER VIEW
@@ -22,8 +22,8 @@ class LoginPageVc: UIViewController {
         return view
     }()
     // MARK: Support Button
-    private let supportButton = BasicImageButton(image: UIImage(named: KeysForImage.questionFigma) ?? UIImage())
-    private let setLangButton = BasicImageButton(image: UIImage(named: KeysForImage.netFigma) ?? UIImage())
+    private let supportButton = OneImageButton(image: UIImage(named: KeysForImage.questionFigma) ?? UIImage())
+    private let setLangButton = OneImageButton(image: UIImage(named: KeysForImage.netFigma) ?? UIImage())
     // MARK: Support label
     private let supportLabel = SecondaryLabel(titleText: KeysForView.support, color: .whiteWithAlpha40, labelFont: .jostRegular15() ?? UIFont())
     private let didChangeLangLabel = SecondaryLabel(titleText: KeysForView.shortLangRu, color: .whiteWithAlpha40, labelFont: .jostRegular15() ?? UIFont())
@@ -36,12 +36,13 @@ class LoginPageVc: UIViewController {
         return view
     }()
     // MARK: Time Label
+    // Time label
     private lazy var timeLabel: UILabel = {
         let label = SecondaryLabel(titleText: "", color: .white, labelFont: .jostRegular50() ?? UIFont())
         label.textAlignment = .center
         return label
     }()
-    // date label
+    // Date label
     private lazy var dateLabel: UILabel = {
         let label = SecondaryLabel(titleText: "", color: .white, labelFont: .jostRegular14() ?? UIFont())
         label.textAlignment = .center
@@ -65,9 +66,9 @@ class LoginPageVc: UIViewController {
     private let loginButton = ConfirmButton(titleButton: KeysForView.login, colorButton: .white, fontButton: .jostMedium18(), textColorButton: .tintsOfBlack, buttonImage: UIImage(), typeButton: .system)
 
     // MARK: Reset password button
-    private let resetPassButton = BasicImageButton(image: UIImage(named: KeysForImage.resetPassword) ?? UIImage())
+    private let resetPassButton = OneImageButton(image: UIImage(named: KeysForImage.resetPassword) ?? UIImage())
     private let registrationButton: UIButton = {
-      let button = BasicImageButton(image: UIImage(named: KeysForImage.registrationButton) ?? UIImage())
+      let button = OneImageButton(image: UIImage(named: KeysForImage.registrationButton) ?? UIImage())
         button.addTarget(self, action: #selector(transitionTo), for: .touchUpInside)
         return button
     }()

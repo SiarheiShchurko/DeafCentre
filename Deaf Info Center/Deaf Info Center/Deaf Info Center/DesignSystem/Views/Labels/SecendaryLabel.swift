@@ -28,6 +28,7 @@ final class SecondaryLabel: UILabel {
 // MARK: - SetUp label
 private extension SecondaryLabel {
     private func configure(titleText: String, color: UIColor, labelFont: UIFont) {
+        
         self.text = titleText
         self.textColor = color
         self.font = labelFont
@@ -36,3 +37,4 @@ private extension SecondaryLabel {
         self.translatesAutoresizingMaskIntoConstraints = false
     }
 }
+

@@ -11,7 +11,7 @@ import Foundation
 enum KeysForImage {
     static let questionFigma = "questionFigma"
     static let netFigma = "netFigma"
-    static let appLogoButton = "appLogo"
+    static let appLogoButton = "appLogoFigma"
     static let resetPassword = "resetParola"
     static let registrationButton = "registrationButton"
     static let backBarButtonItem = "arrow.leftFigma"
@@ -21,4 +21,7 @@ enum KeysForImage {
     static let rightArrowFigma = "rightArrowFigma"
     static let downArrowFigma = "downArrowFigma"
     static let datePickerFigma = "dateOfBirthFigma"
+    static let verticalEllipsFigma = "verticalEllipsFigma"
+    static let videoCallIFigma = "videoCallIFigma"
+    static let historyCallsFigma = "historyCallsFigma"
 }

@@ -15,7 +15,7 @@ final class RegistrationVc: UIViewController {
     private let percentHeightTaken = 0.38
     // MARK: View
     // Header
-    private lazy var headerView = OneCornerRadiusView()
+    private lazy var headerView = HeaderView()
     // ClearView
     private let clearView: UIView = {
         let view = UIView()
@@ -133,13 +133,13 @@ final class RegistrationVc: UIViewController {
         button.addTarget(self, action: #selector(popVc), for: .touchUpInside)
         return button
     }()
-    // personal checkBox Button
+    // hearing degree checkBox Button
     let personalCheckbox: CheckboxButton = {
         let button = CheckboxButton()
         button.addTarget(self, action: #selector(activateHearingDegreePunct(sender:)), for: .touchUpInside)
         return button
     }()
-    // agree checkBox Button
+    // Agree app rules checkBox Button
     let agreementCheckbox: CheckboxButton = {
         let button = CheckboxButton()
         button.addTarget(self, action: #selector(agreeToTheTermsCheckBox), for: .touchUpInside)
@@ -165,9 +165,9 @@ final class RegistrationVc: UIViewController {
         return button
     }()
     //Chevron down on sex text field
-    private let downArrowButton = BasicImageButton(image: UIImage(named: KeysForImage.downArrowFigma) ?? UIImage())
+    private let downArrowButton = OneImageButton(image: UIImage(named: KeysForImage.downArrowFigma) ?? UIImage())
     //Date picker (Date of birth TF)
-    private lazy var dateOfBirthButton = BasicImageButton(image: UIImage(named: KeysForImage.datePickerFigma) ?? UIImage())
+    private lazy var dateOfBirthButton = OneImageButton(image: UIImage(named: KeysForImage.datePickerFigma) ?? UIImage())
     // MARK: Actions
     // Activate hearind degree textField
     @objc private func activateHearingDegreePunct(sender: UIButton) {
@@ -276,7 +276,6 @@ final class RegistrationVc: UIViewController {
         registrationModel.update = {
             self.popVc()
         }
-        //Else self.disp called miss alert
         registrationModel.updateError = {
             self.alertMissEmailOrPass()
         }
@@ -288,7 +287,7 @@ final class RegistrationVc: UIViewController {
         shapes.frame = view.frame
         shapes.clipsToBounds = true
         let layer1 = CALayer()
-        layer1.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1).cgColor
+        layer1.backgroundColor = UIColor.white.cgColor
         layer1.bounds = shapes.bounds
         layer1.position = shapes.center
         shapes.layer.addSublayer(layer1)
@@ -300,7 +299,7 @@ final class RegistrationVc: UIViewController {
         let shadowPath0 = UIBezierPath(roundedRect: shadows.bounds, cornerRadius: 20)
         let layer0 = CALayer()
         layer0.shadowPath = shadowPath0.cgPath
-        layer0.shadowColor = UIColor(red: 0.259, green: 0.263, blue: 0.525, alpha: 0.2).cgColor
+        layer0.shadowColor = UIColor.jacksonsPurpleAlpha21.cgColor
         layer0.shadowOpacity = 1
         layer0.shadowRadius = 20
         layer0.shadowOffset = CGSize(width: 0, height: 0)

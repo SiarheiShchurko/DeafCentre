@@ -7,5 +7,5 @@
 
 import UIKit
 final class ShadowView: UIView {
-    
+
 }

@@ -9,7 +9,7 @@ import Foundation
 // MARK: Protocol for VM
 protocol LoginPageModelProtocol: AnyObject {
     func loadDate()
-    func startTimer()
+   // func startTimer()
     var time: String { get set }
     var date: String { get set }
     var updateTime: (() -> Void)? { get set }
