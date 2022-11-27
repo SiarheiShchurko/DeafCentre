@@ -21,19 +21,22 @@ final class HomeScreenVc: UIViewController {
     // MARK: Labels
     // Time label
     private lazy var timeLabel: UILabel = {
-        let label = SecondaryLabel(titleText: "", color: .white, labelFont: .jostRegular50() ?? UIFont())
+        let label = UniversalLabel(titleText: "", color: .white, labelFont: .jostRegular50() ?? UIFont())
         label.textAlignment = .center
         return label
     }()
     // Date label
     private lazy var dateLabel: UILabel = {
-        let label = SecondaryLabel(titleText: "", color: .white, labelFont: .jostRegular14() ?? UIFont())
+        let label = UniversalLabel(titleText: "", color: .white, labelFont: .jostRegular14() ?? UIFont())
         label.textAlignment = .center
         return label
     }()
     // MARK: Buttons
     private let menuButton = OneImageButton(image: UIImage(named: KeysForImage.verticalEllipsFigma) ?? UIImage())
-    private let videoCallButton = OneImageButton(image: UIImage(named: KeysForImage.videoCallIFigma) ?? UIImage())
+    private let videoCallButton: UIButton = { let button = OneImageButton(image: UIImage(named: KeysForImage.videoCallIFigma) ?? UIImage())
+        button.addTarget(self, action: #selector(startVideoCall), for: .touchUpInside)
+        return button
+    }()
     private let historyCallsButton: UIButton = {
         let button = UIButton(type: .custom)
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -42,10 +45,13 @@ final class HomeScreenVc: UIViewController {
         button.setTitleColor(.black, for: .highlighted)
         button.titleLabel?.font = UIFont.jostRegular17()
         button.setImage(UIImage(named: KeysForImage.historyCallsFigma)?.withTintColor(UIColor.purpoureLight, renderingMode: .alwaysOriginal), for: .normal)
-//        button.imageEdgeInsets = UIEdgeInsets(top: LayoutConstants.inset1, left: 0, bottom: 50, right: 0)
-//        button.titleEdgeInsets = UIEdgeInsets(top: 0, left: 10, bottom: 1, right: 10)
-        
-        
+        button.imageView?.topAnchor.constraint(equalTo: button.topAnchor, constant: LayoutConstants.inset16).isActive = true
+        button.imageView?.contentMode = .top
+        button.imageView?.centerXAnchor.constraint(equalTo: button.centerXAnchor).isActive = true
+        button.titleLabel?.topAnchor.constraint(equalTo: button.imageView!.bottomAnchor, constant: -LayoutConstants.inset4).isActive = true
+        button.titleLabel?.widthAnchor.constraint(equalTo: button.widthAnchor).isActive = true
+        button.titleLabel?.centerXAnchor.constraint(equalTo: button.centerXAnchor).isActive = true
+        button.titleLabel?.heightAnchor.constraint(equalToConstant: LayoutConstants.inset20).isActive = true
         return button
     }()
     // MARK: System methods
@@ -79,6 +85,16 @@ private extension HomeScreenVc {
         headerView.addSubview(dateLabel)
         headerView.addSubview(videoCallButton)
         view.addSubview(historyCallsButton)
+    }
+}
+// MARK: Actions
+private extension HomeScreenVc {
+    // Super view set
+    @objc func startVideoCall() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+         let nextVC = CallScreenVc()
+        nextVC.modalPresentationStyle = .fullScreen
+        navigationController?.present(nextVC, animated: true)
     }
 }
 // MARK: Constraints

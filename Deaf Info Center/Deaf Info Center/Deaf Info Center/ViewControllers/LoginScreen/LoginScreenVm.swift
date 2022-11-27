@@ -7,7 +7,7 @@
 
 import Foundation
 // MARK: Protocol for VM
-protocol LoginPageModelProtocol: AnyObject {
+protocol LoginScreenModelProtocol: AnyObject {
     func loadDate()
    // func startTimer()
     var time: String { get set }
@@ -17,7 +17,7 @@ protocol LoginPageModelProtocol: AnyObject {
     var timer: Timer? { get set }
 }
 // MARK: VM Class
-final class LoginPageVm: LoginPageModelProtocol {
+final class LoginPageVm: LoginScreenModelProtocol {
     let dateService: DateService = DateService()
     var timer: Timer?
     var updateTime: (() -> Void)?

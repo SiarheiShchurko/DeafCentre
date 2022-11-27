@@ -70,9 +70,9 @@ final class RegistrationVc: UIViewController {
     private let professionLabel = RegistrationTfLabel(titleText: KeysForView.proffesion, redStar: "")
     //MARK: Checkbox Labels
     // Password rules
-    let passwordRulesLabel = SecondaryLabel(titleText: KeysForView.passwordRules, color: .eerieBlackAlpha50, labelFont: .jostRegular14() ?? UIFont())
+    let passwordRulesLabel = UniversalLabel(titleText: KeysForView.passwordRules, color: .eerieBlackAlpha50, labelFont: .jostRegular14() ?? UIFont())
     // Personal Checkbox label
-    private let personalLabel = SecondaryLabel(titleText: KeysForView.hearingImpairedPerson, color: .black, labelFont: UIFont.jostRegular16() ?? UIFont())
+    private let personalLabel = UniversalLabel(titleText: KeysForView.hearingImpairedPerson, color: .black, labelFont: UIFont.jostRegular16() ?? UIFont())
     
     // Agreenment Checkbox Label
     private let agreenementLabel: UILabel = {
@@ -91,11 +91,11 @@ final class RegistrationVc: UIViewController {
         return label
     }()
     // Change lang label (under separatop)
-    private let changeLanguageLabel = SecondaryLabel(titleText: KeysForView.changeLanguage, color: .black, labelFont: UIFont.jostMedium20() ?? UIFont())
+    private let changeLanguageLabel = UniversalLabel(titleText: KeysForView.changeLanguage, color: .black, labelFont: UIFont.jostMedium20() ?? UIFont())
     // Radio label
-    private let romanianLangLabel = SecondaryLabel(titleText: KeysForView.romanian, color: .black, labelFont: UIFont.jostRegular17() ?? UIFont())
+    private let romanianLangLabel = UniversalLabel(titleText: KeysForView.romanian, color: .black, labelFont: UIFont.jostRegular17() ?? UIFont())
     // Radio label
-    private let russianLangLabel = SecondaryLabel(titleText: KeysForView.russion, color: .black, labelFont: .jostRegular17() ?? UIFont())
+    private let russianLangLabel = UniversalLabel(titleText: KeysForView.russion, color: .black, labelFont: .jostRegular17() ?? UIFont())
     // MARK: TextFields
     private let nameTextField: RegistrationTextField = {
         let textField = RegistrationTextField(placeholdere: "")

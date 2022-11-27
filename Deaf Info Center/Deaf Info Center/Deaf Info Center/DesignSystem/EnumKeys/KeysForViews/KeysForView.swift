@@ -39,6 +39,7 @@ enum KeysForView {
     static let severeDegree = "Grad sever"
     static let accentuatedDegree = "Grad accentuat"
     static let mediumDegree = "Grad mediu"
+    static let lookFreeOperator = "Așteptați\ncăutăm un operator liber"
 }
 
 

@@ -44,6 +44,7 @@ enum LayoutConstants {
     static let inset40: CGFloat = 40.0
     static let inset42: CGFloat = 42.0
     static let inset43: CGFloat = 43.0
+    static let inset45: CGFloat = 45.0
     static let inset46: CGFloat = 46.0
     static let inset48: CGFloat = 48.0
     static let inset49: CGFloat = 49.0
@@ -68,6 +69,7 @@ enum LayoutConstants {
     static let inset132: CGFloat = 132.0
     static let inset144: CGFloat = 144.0
     static let inset160: CGFloat = 160.0
+    static let inset168: CGFloat = 168.0
     static let inset282: CGFloat = 282.0
     // MARK: - Duration
     static let duration: TimeInterval = 0.1

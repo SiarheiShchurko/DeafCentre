@@ -6,7 +6,7 @@
 //
 import UIKit
 
-final class SecondaryLabel: UILabel {
+final class UniversalLabel: UILabel {
     
     var titleText: String?
     var color: UIColor?
@@ -26,7 +26,7 @@ final class SecondaryLabel: UILabel {
 
 
 // MARK: - SetUp label
-private extension SecondaryLabel {
+private extension UniversalLabel {
     private func configure(titleText: String, color: UIColor, labelFont: UIFont) {
         
         self.text = titleText

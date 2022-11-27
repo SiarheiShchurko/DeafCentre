@@ -8,8 +8,8 @@
 import UIKit
 import Foundation
 
-class LoginPageVc: UIViewController {
-    private let loginPageModel: LoginPageModelProtocol = LoginPageVm()
+class LoginScreenVc: UIViewController {
+    private let loginPageModel: LoginScreenModelProtocol = LoginPageVm()
     
     let conteinerView = HeaderView()
     // MARK: Fill color between self.view top and safeArea top
@@ -25,8 +25,8 @@ class LoginPageVc: UIViewController {
     private let supportButton = OneImageButton(image: UIImage(named: KeysForImage.questionFigma) ?? UIImage())
     private let setLangButton = OneImageButton(image: UIImage(named: KeysForImage.netFigma) ?? UIImage())
     // MARK: Support label
-    private let supportLabel = SecondaryLabel(titleText: KeysForView.support, color: .whiteWithAlpha40, labelFont: .jostRegular15() ?? UIFont())
-    private let didChangeLangLabel = SecondaryLabel(titleText: KeysForView.shortLangRu, color: .whiteWithAlpha40, labelFont: .jostRegular15() ?? UIFont())
+    private let supportLabel = UniversalLabel(titleText: KeysForView.support, color: .whiteWithAlpha40, labelFont: .jostRegular15() ?? UIFont())
+    private let didChangeLangLabel = UniversalLabel(titleText: KeysForView.shortLangRu, color: .whiteWithAlpha40, labelFont: .jostRegular15() ?? UIFont())
     // MARK: Logo Image View
     private let logoImageView: UIImageView = {
         let view = UIImageView()
@@ -38,13 +38,13 @@ class LoginPageVc: UIViewController {
     // MARK: Time Label
     // Time label
     private lazy var timeLabel: UILabel = {
-        let label = SecondaryLabel(titleText: "", color: .white, labelFont: .jostRegular50() ?? UIFont())
+        let label = UniversalLabel(titleText: "", color: .white, labelFont: .jostRegular50() ?? UIFont())
         label.textAlignment = .center
         return label
     }()
     // Date label
     private lazy var dateLabel: UILabel = {
-        let label = SecondaryLabel(titleText: "", color: .white, labelFont: .jostRegular14() ?? UIFont())
+        let label = UniversalLabel(titleText: "", color: .white, labelFont: .jostRegular14() ?? UIFont())
         label.textAlignment = .center
         return label
     }()

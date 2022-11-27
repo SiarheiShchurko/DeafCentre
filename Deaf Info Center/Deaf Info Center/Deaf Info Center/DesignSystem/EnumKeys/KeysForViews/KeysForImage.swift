@@ -24,4 +24,8 @@ enum KeysForImage {
     static let verticalEllipsFigma = "verticalEllipsFigma"
     static let videoCallIFigma = "videoCallIFigma"
     static let historyCallsFigma = "historyCallsFigma"
+    static let finishCallFigma = "finishCallFigma"
+    static let cameraReverseFigma = "cameraReverseFigma"
+    static let horizontalEllipseFigma = "horizontalEllipseFigma"
+    static let micFigma = "micFigma"
 }

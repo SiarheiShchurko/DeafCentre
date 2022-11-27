@@ -22,6 +22,9 @@ extension UIFont {
     static func jostRegular17() -> UIFont? {
         return UIFont.init(name: "Jost-Regular", size: 17)
     }
+    static func jostRegular18() -> UIFont? {
+        return UIFont.init(name: "Jost-Regular", size: 18)
+    }
     static func jostRegular20() -> UIFont? {
         return UIFont.init(name: "Jost-Regular", size: 20)
     }

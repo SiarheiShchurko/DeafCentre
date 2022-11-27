@@ -17,12 +17,12 @@
 		ED0FC0D42926345100669798 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0FC0D32926345100669798 /* Constant.swift */; };
 		ED0FC0D82926348800669798 /* UIFont + extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0FC0D62926348800669798 /* UIFont + extension.swift */; };
 		ED0FC0D92926348800669798 /* UIColor + exstension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0FC0D72926348800669798 /* UIColor + exstension.swift */; };
-		ED0FC0DD292634D800669798 /* LoginPageVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0FC0DC292634D800669798 /* LoginPageVc.swift */; };
+		ED0FC0DD292634D800669798 /* LoginScreenVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0FC0DC292634D800669798 /* LoginScreenVc.swift */; };
 		ED0FC0E02926350300669798 /* KeysForImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0FC0DF2926350300669798 /* KeysForImage.swift */; };
 		ED0FC0E62926350C00669798 /* OneImageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0FC0E32926350C00669798 /* OneImageButton.swift */; };
-		ED0FC0E72926350C00669798 /* SecendaryLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0FC0E52926350C00669798 /* SecendaryLabel.swift */; };
+		ED0FC0E72926350C00669798 /* UniversalLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0FC0E52926350C00669798 /* UniversalLabel.swift */; };
 		ED0FC0EB292635BD00669798 /* Jost-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ED0FC0EA292635BD00669798 /* Jost-Regular.ttf */; };
-		ED0FC0EF29263EA400669798 /* LoginPageVm.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0FC0EE29263EA400669798 /* LoginPageVm.swift */; };
+		ED0FC0EF29263EA400669798 /* LoginScreenVm.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0FC0EE29263EA400669798 /* LoginScreenVm.swift */; };
 		ED0FC0F3292640B800669798 /* DateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0FC0F2292640B800669798 /* DateService.swift */; };
 		ED0FC0F729267B8000669798 /* LoginDisplayTf.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0FC0F629267B8000669798 /* LoginDisplayTf.swift */; };
 		ED0FC0FA2926937700669798 /* KeysForView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0FC0F92926937700669798 /* KeysForView.swift */; };
@@ -42,6 +42,8 @@
 		ED712D522932006600977FB3 /* HomeScreenVm.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED712D512932006600977FB3 /* HomeScreenVm.swift */; };
 		ED82906E292D09C700DD6233 /* RadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED82906D292D09C700DD6233 /* RadioButton.swift */; };
 		ED829070292D2FEE00DD6233 /* ConfirmButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED82906F292D2FEE00DD6233 /* ConfirmButton.swift */; };
+		EDBE984529336A550015124A /* CallScreenVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDBE984429336A550015124A /* CallScreenVc.swift */; };
+		EDBE984729336A660015124A /* CallScreenVm.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDBE984629336A660015124A /* CallScreenVm.swift */; };
 		EDC0DA722928DC2700AB7E34 /* CornerAngleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC0DA712928DC2700AB7E34 /* CornerAngleView.swift */; };
 		EDC0DA742928DC6800AB7E34 /* PurpouseFillTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC0DA732928DC6800AB7E34 /* PurpouseFillTopView.swift */; };
 		EDC0DA762929105A00AB7E34 /* HeaderLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC0DA752929105A00AB7E34 /* HeaderLabel.swift */; };
@@ -61,12 +63,12 @@
 		ED0FC0D32926345100669798 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		ED0FC0D62926348800669798 /* UIFont + extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont + extension.swift"; sourceTree = "<group>"; };
 		ED0FC0D72926348800669798 /* UIColor + exstension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor + exstension.swift"; sourceTree = "<group>"; };
-		ED0FC0DC292634D800669798 /* LoginPageVc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPageVc.swift; sourceTree = "<group>"; };
+		ED0FC0DC292634D800669798 /* LoginScreenVc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginScreenVc.swift; sourceTree = "<group>"; };
 		ED0FC0DF2926350300669798 /* KeysForImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeysForImage.swift; sourceTree = "<group>"; };
 		ED0FC0E32926350C00669798 /* OneImageButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneImageButton.swift; sourceTree = "<group>"; };
-		ED0FC0E52926350C00669798 /* SecendaryLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecendaryLabel.swift; sourceTree = "<group>"; };
+		ED0FC0E52926350C00669798 /* UniversalLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniversalLabel.swift; sourceTree = "<group>"; };
 		ED0FC0EA292635BD00669798 /* Jost-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Jost-Regular.ttf"; sourceTree = "<group>"; };
-		ED0FC0EE29263EA400669798 /* LoginPageVm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageVm.swift; sourceTree = "<group>"; };
+		ED0FC0EE29263EA400669798 /* LoginScreenVm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreenVm.swift; sourceTree = "<group>"; };
 		ED0FC0F2292640B800669798 /* DateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateService.swift; sourceTree = "<group>"; };
 		ED0FC0F629267B8000669798 /* LoginDisplayTf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginDisplayTf.swift; sourceTree = "<group>"; };
 		ED0FC0F92926937700669798 /* KeysForView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeysForView.swift; sourceTree = "<group>"; };
@@ -86,6 +88,8 @@
 		ED712D512932006600977FB3 /* HomeScreenVm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenVm.swift; sourceTree = "<group>"; };
 		ED82906D292D09C700DD6233 /* RadioButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButton.swift; sourceTree = "<group>"; };
 		ED82906F292D2FEE00DD6233 /* ConfirmButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmButton.swift; sourceTree = "<group>"; };
+		EDBE984429336A550015124A /* CallScreenVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallScreenVc.swift; sourceTree = "<group>"; };
+		EDBE984629336A660015124A /* CallScreenVm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallScreenVm.swift; sourceTree = "<group>"; };
 		EDC0DA712928DC2700AB7E34 /* CornerAngleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerAngleView.swift; sourceTree = "<group>"; };
 		EDC0DA732928DC6800AB7E34 /* PurpouseFillTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurpouseFillTopView.swift; sourceTree = "<group>"; };
 		EDC0DA752929105A00AB7E34 /* HeaderLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderLabel.swift; sourceTree = "<group>"; };
@@ -177,20 +181,21 @@
 		ED0FC0DA292634D800669798 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				ED0FC0DB292634D800669798 /* LoginPage */,
-				ED059A772927D58000077B73 /* Registration */,
+				EDBE98432933681F0015124A /* CallScreenVC */,
 				ED712D502932003200977FB3 /* HomeScreen */,
+				ED059A772927D58000077B73 /* Registration */,
+				ED0FC0DB292634D800669798 /* LoginScreen */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
-		ED0FC0DB292634D800669798 /* LoginPage */ = {
+		ED0FC0DB292634D800669798 /* LoginScreen */ = {
 			isa = PBXGroup;
 			children = (
-				ED0FC0DC292634D800669798 /* LoginPageVc.swift */,
-				ED0FC0EE29263EA400669798 /* LoginPageVm.swift */,
+				ED0FC0DC292634D800669798 /* LoginScreenVc.swift */,
+				ED0FC0EE29263EA400669798 /* LoginScreenVm.swift */,
 			);
-			path = LoginPage;
+			path = LoginScreen;
 			sourceTree = "<group>";
 		};
 		ED0FC0E12926350C00669798 /* Views */ = {
@@ -219,7 +224,7 @@
 		ED0FC0E42926350C00669798 /* Labels */ = {
 			isa = PBXGroup;
 			children = (
-				ED0FC0E52926350C00669798 /* SecendaryLabel.swift */,
+				ED0FC0E52926350C00669798 /* UniversalLabel.swift */,
 				EDC0DA752929105A00AB7E34 /* HeaderLabel.swift */,
 				ED62BC63292B69990044C432 /* RegistrationTfLabel.swift */,
 			);
@@ -314,6 +319,15 @@
 			path = HomeScreen;
 			sourceTree = "<group>";
 		};
+		EDBE98432933681F0015124A /* CallScreenVC */ = {
+			isa = PBXGroup;
+			children = (
+				EDBE984429336A550015124A /* CallScreenVc.swift */,
+				EDBE984629336A660015124A /* CallScreenVm.swift */,
+			);
+			path = CallScreenVC;
+			sourceTree = "<group>";
+		};
 		EDC0DA702928DBF400AB7E34 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -402,14 +416,16 @@
 				ED612AFB292A56B70098CA87 /* RegistrationTf.swift in Sources */,
 				ED712D522932006600977FB3 /* HomeScreenVm.swift in Sources */,
 				ED62BC64292B69990044C432 /* RegistrationTfLabel.swift in Sources */,
-				ED0FC0EF29263EA400669798 /* LoginPageVm.swift in Sources */,
+				ED0FC0EF29263EA400669798 /* LoginScreenVm.swift in Sources */,
 				ED0FC0FA2926937700669798 /* KeysForView.swift in Sources */,
 				ED712D4D2931FD5400977FB3 /* PickerView.swift in Sources */,
-				ED0FC0E72926350C00669798 /* SecendaryLabel.swift in Sources */,
+				ED0FC0E72926350C00669798 /* UniversalLabel.swift in Sources */,
 				ED059A7B2927D9D100077B73 /* RegistrationVm.swift in Sources */,
+				EDBE984729336A660015124A /* CallScreenVm.swift in Sources */,
 				EDC0DA742928DC6800AB7E34 /* PurpouseFillTopView.swift in Sources */,
 				ED0FC0D92926348800669798 /* UIColor + exstension.swift in Sources */,
 				EDC0DA7829291B5B00AB7E34 /* BackButtonItem.swift in Sources */,
+				EDBE984529336A550015124A /* CallScreenVc.swift in Sources */,
 				ED0FC0D82926348800669798 /* UIFont + extension.swift in Sources */,
 				EDC0DA762929105A00AB7E34 /* HeaderLabel.swift in Sources */,
 				ED62BC66292B80760044C432 /* KeysForSymbols.swift in Sources */,
@@ -425,7 +441,7 @@
 				ED528F6C292E6DF200857B94 /* ShadowView.swift in Sources */,
 				ED0FC0F729267B8000669798 /* LoginDisplayTf.swift in Sources */,
 				EDC0DA722928DC2700AB7E34 /* CornerAngleView.swift in Sources */,
-				ED0FC0DD292634D800669798 /* LoginPageVc.swift in Sources */,
+				ED0FC0DD292634D800669798 /* LoginScreenVc.swift in Sources */,
 				ED712D4F2932002C00977FB3 /* HomeScreenVc.swift in Sources */,
 				ED059A792927D9C200077B73 /* RegistrationVc.swift in Sources */,
 				ED2802DA2930FD6B003971DD /* UITextField + extension.swift in Sources */,
