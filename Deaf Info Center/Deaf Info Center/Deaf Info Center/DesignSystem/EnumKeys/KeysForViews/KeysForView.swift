@@ -40,6 +40,10 @@ enum KeysForView {
     static let accentuatedDegree = "Grad accentuat"
     static let mediumDegree = "Grad mediu"
     static let lookFreeOperator = "Așteptați\ncăutăm un operator liber"
+    static let userCabinet = "Cabinet personal"
+    static let aboutApp = "Despre aplicate"
+    static let feedback = "Feedback"
+    static let logOut = "Log out" 
 }
 
 

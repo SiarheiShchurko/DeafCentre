@@ -34,6 +34,8 @@
 		ED528F6C292E6DF200857B94 /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED528F6B292E6DF200857B94 /* ShadowView.swift */; };
 		ED528F6E292E840300857B94 /* SeparatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED528F6D292E840300857B94 /* SeparatorView.swift */; };
 		ED53E4AC292BA6B80005D51B /* CheckBoxButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED53E4AB292BA6B80005D51B /* CheckBoxButton.swift */; };
+		ED56E0B62934A01900EEAD60 /* MenuVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED56E0B52934A01900EEAD60 /* MenuVc.swift */; };
+		ED56E0B92934A03200EEAD60 /* MenuVm.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED56E0B82934A03200EEAD60 /* MenuVm.swift */; };
 		ED612AFB292A56B70098CA87 /* RegistrationTf.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED612AFA292A56B70098CA87 /* RegistrationTf.swift */; };
 		ED62BC64292B69990044C432 /* RegistrationTfLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED62BC63292B69990044C432 /* RegistrationTfLabel.swift */; };
 		ED62BC66292B80760044C432 /* KeysForSymbols.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED62BC65292B80760044C432 /* KeysForSymbols.swift */; };
@@ -80,6 +82,8 @@
 		ED528F6B292E6DF200857B94 /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
 		ED528F6D292E840300857B94 /* SeparatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeparatorView.swift; sourceTree = "<group>"; };
 		ED53E4AB292BA6B80005D51B /* CheckBoxButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxButton.swift; sourceTree = "<group>"; };
+		ED56E0B52934A01900EEAD60 /* MenuVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuVc.swift; sourceTree = "<group>"; };
+		ED56E0B82934A03200EEAD60 /* MenuVm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuVm.swift; sourceTree = "<group>"; };
 		ED612AFA292A56B70098CA87 /* RegistrationTf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationTf.swift; sourceTree = "<group>"; };
 		ED62BC63292B69990044C432 /* RegistrationTfLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationTfLabel.swift; sourceTree = "<group>"; };
 		ED62BC65292B80760044C432 /* KeysForSymbols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeysForSymbols.swift; sourceTree = "<group>"; };
@@ -181,7 +185,8 @@
 		ED0FC0DA292634D800669798 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				EDBE98432933681F0015124A /* CallScreenVC */,
+				ED56E0B429349FE900EEAD60 /* MenuScreen */,
+				EDBE98432933681F0015124A /* CallScreen */,
 				ED712D502932003200977FB3 /* HomeScreen */,
 				ED059A772927D58000077B73 /* Registration */,
 				ED0FC0DB292634D800669798 /* LoginScreen */,
@@ -310,6 +315,15 @@
 			path = CheckServices;
 			sourceTree = "<group>";
 		};
+		ED56E0B429349FE900EEAD60 /* MenuScreen */ = {
+			isa = PBXGroup;
+			children = (
+				ED56E0B52934A01900EEAD60 /* MenuVc.swift */,
+				ED56E0B82934A03200EEAD60 /* MenuVm.swift */,
+			);
+			path = MenuScreen;
+			sourceTree = "<group>";
+		};
 		ED712D502932003200977FB3 /* HomeScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -319,13 +333,13 @@
 			path = HomeScreen;
 			sourceTree = "<group>";
 		};
-		EDBE98432933681F0015124A /* CallScreenVC */ = {
+		EDBE98432933681F0015124A /* CallScreen */ = {
 			isa = PBXGroup;
 			children = (
 				EDBE984429336A550015124A /* CallScreenVc.swift */,
 				EDBE984629336A660015124A /* CallScreenVm.swift */,
 			);
-			path = CallScreenVC;
+			path = CallScreen;
 			sourceTree = "<group>";
 		};
 		EDC0DA702928DBF400AB7E34 /* View */ = {
@@ -432,6 +446,7 @@
 				ED53E4AC292BA6B80005D51B /* CheckBoxButton.swift in Sources */,
 				ED829070292D2FEE00DD6233 /* ConfirmButton.swift in Sources */,
 				ED0FC0F3292640B800669798 /* DateService.swift in Sources */,
+				ED56E0B62934A01900EEAD60 /* MenuVc.swift in Sources */,
 				ED0FC0E62926350C00669798 /* OneImageButton.swift in Sources */,
 				ED82906E292D09C700DD6233 /* RadioButton.swift in Sources */,
 				ED528F6E292E840300857B94 /* SeparatorView.swift in Sources */,
@@ -449,6 +464,7 @@
 				ED528F68292E61B400857B94 /* UIViewController + extension.swift in Sources */,
 				ED0FC0D42926345100669798 /* Constant.swift in Sources */,
 				ED4DD348292F6B04002FE2D8 /* CheckRegistrFormService.swift in Sources */,
+				ED56E0B92934A03200EEAD60 /* MenuVm.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

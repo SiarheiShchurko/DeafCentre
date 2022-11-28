@@ -9,27 +9,23 @@ import Foundation
 // MARK: Protocol for VM
 protocol LoginScreenModelProtocol: AnyObject {
     func loadDate()
-   // func startTimer()
-    var time: String { get set }
-    var date: String { get set }
-    var updateTime: (() -> Void)? { get set }
-    var updateDate: (() -> Void)? { get set }
     var timer: Timer? { get set }
 }
 // MARK: VM Class
 final class LoginPageVm: LoginScreenModelProtocol {
+    
+    weak var dateDelegate: GiveAwayDateProtocol?
+    
     let dateService: DateService = DateService()
     var timer: Timer?
-    var updateTime: (() -> Void)?
-    var updateDate: (() -> Void)?
     var time: String = "" {
         didSet {
-            updateTime?()
+            dateDelegate?.giveAwayTime(time: time)
         }
     }
     var date: String = "" {
         didSet {
-            updateDate?()
+            dateDelegate?.giveAwayDate(date: date)
         }
     }
     // MARK: Func which search time

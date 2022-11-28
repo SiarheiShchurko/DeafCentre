@@ -9,33 +9,13 @@ import UIKit
 import Foundation
 
 class LoginScreenVc: UIViewController {
-    private let loginPageModel: LoginScreenModelProtocol = LoginPageVm()
-    
-    let conteinerView = HeaderView()
-    // MARK: Fill color between self.view top and safeArea top
-    private let purposeTopFillView = PurpouseTopFillView()
-    // MARK: TOP HEADER VIEW
-    private let headerView: UIView = {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .purpoureMidnight
-        return view
-    }()
-    // MARK: Support Button
-    private let supportButton = OneImageButton(image: UIImage(named: KeysForImage.questionFigma) ?? UIImage())
-    private let setLangButton = OneImageButton(image: UIImage(named: KeysForImage.netFigma) ?? UIImage())
-    // MARK: Support label
+    // MARK: Model let
+    private let loginPageModel = LoginPageVm()
+    // MARK: Labels
+    // Support label
     private let supportLabel = UniversalLabel(titleText: KeysForView.support, color: .whiteWithAlpha40, labelFont: .jostRegular15() ?? UIFont())
+    // Change lang label
     private let didChangeLangLabel = UniversalLabel(titleText: KeysForView.shortLangRu, color: .whiteWithAlpha40, labelFont: .jostRegular15() ?? UIFont())
-    // MARK: Logo Image View
-    private let logoImageView: UIImageView = {
-        let view = UIImageView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.image = UIImage(named: KeysForImage.appLogoButton)
-        view.contentMode = .scaleAspectFit
-        return view
-    }()
-    // MARK: Time Label
     // Time label
     private lazy var timeLabel: UILabel = {
         let label = UniversalLabel(titleText: "", color: .white, labelFont: .jostRegular50() ?? UIFont())
@@ -48,75 +28,72 @@ class LoginScreenVc: UIViewController {
         label.textAlignment = .center
         return label
     }()
-
-    // MARK: EmailTextField
+    // MARK: Text fields
+    // EmailTextField
     private lazy var emailTextField: UITextField = {
         let textField = LoginDisplayTextField(placeholdere: KeysForView.email)
         textField.addTarget(self, action: #selector(textFieldsIsEmptyCheck), for: .editingChanged)
         return textField
     }()
-    // MARK: PasswordTextField
+    // PasswordTextField
     private lazy var passwordTextField: UITextField = {
-       let textField = LoginDisplayTextField(placeholdere: KeysForView.password)
+        let textField = LoginDisplayTextField(placeholdere: KeysForView.password)
         textField.isSecureTextEntry = true
         textField.addTarget(self, action: #selector(textFieldsIsEmptyCheck), for: .editingChanged)
         return textField
     }()
-    // MARK: Login Button
+    // MARK: Buttons
+    // Support button
+    private let supportButton = OneImageButton(image: UIImage(named: KeysForImage.questionFigma) ?? UIImage())
+    // Change lang button
+    private let setLangButton = OneImageButton(image: UIImage(named: KeysForImage.netFigma) ?? UIImage())
+    // Login button
     private let loginButton = ConfirmButton(titleButton: KeysForView.login, colorButton: .white, fontButton: .jostMedium18(), textColorButton: .tintsOfBlack, buttonImage: UIImage(), typeButton: .system)
-
-    // MARK: Reset password button
+    // Reset password button
     private let resetPassButton = OneImageButton(image: UIImage(named: KeysForImage.resetPassword) ?? UIImage())
+    // Registration button
     private let registrationButton: UIButton = {
-      let button = OneImageButton(image: UIImage(named: KeysForImage.registrationButton) ?? UIImage())
-        button.addTarget(self, action: #selector(transitionTo), for: .touchUpInside)
+        let button = OneImageButton(image: UIImage(named: KeysForImage.registrationButton) ?? UIImage())
+        button.addTarget(self, action: #selector(pushRegistration), for: .touchUpInside)
         return button
     }()
-    @objc func transitionTo() {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-         let nextVC = RegistrationVc()
-         navigationController?.pushViewController(nextVC, animated: true)
-    }
-    @objc func textFieldsIsEmptyCheck() {
-        let isEmpty = (emailTextField.text?.isEmpty ?? true) || (passwordTextField.text?.isEmpty ?? true)
-        if !isEmpty {
-              loginButton.isEnabled = true
-           } else {
-               loginButton.isEnabled = false
-           }
-    }
-    // Update date and time
-    private func updateTime() {
-        self.loginPageModel.updateTime = { [ self ] in
-            DispatchQueue.main.async {
-                self.timeLabel.text = self.loginPageModel.time
-            }
-        }
-            self.loginPageModel.updateDate = { [ self ] in
-                DispatchQueue.main.async {
-                    self.dateLabel.text = self.loginPageModel.date
-                }
-            }
-        }
-    //MARK: Start func for showed time
+    // MARK: Views
+    // Conteiner view
+    let conteinerView = HeaderView()
+    // Fill color between self.view top and safeArea top
+    private let purposeTopFillView = PurpouseTopFillView()
+    // Top header view
+    private let headerView: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .purpoureMidnight
+        return view
+    }()
+    // Logo Image View
+    private let logoImageView: UIImageView = {
+        let view = UIImageView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.image = UIImage(named: KeysForImage.appLogoButton)
+        view.contentMode = .scaleAspectFit
+        return view
+    }()
+    //MARK: System methods
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         loginPageModel.loadDate()
     }
-    // MARK: ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         addView()
         constraints()
         addTapGestureToHideKeyboard()
-        updateTime()
+        loginPageModel.dateDelegate = self
     }
-    // MARK: Stop timer
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         loginPageModel.timer?.invalidate()
     }
-// MARK: Add view button
+    // MARK: Custom funcs
     private func addView() {
         view.addSubview(conteinerView)
         view.addSubview(registrationButton)
@@ -134,8 +111,10 @@ class LoginScreenVc: UIViewController {
         headerView.addSubview(setLangButton)
         headerView.addSubview(didChangeLangLabel)
     }
-
-    private func constraints() {
+}
+// MARK: Constraints
+private extension LoginScreenVc {
+    func constraints() {
         NSLayoutConstraint.activate([
             // Conteiner view
             conteinerView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
@@ -208,6 +187,34 @@ class LoginScreenVc: UIViewController {
         ])
     }
 }
-
-
-
+// MARK: Actions
+private extension LoginScreenVc {
+    // Push to registrationVc
+    @objc func pushRegistration() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let nextVC = RegistrationVc()
+        navigationController?.pushViewController(nextVC, animated: true)
+    }
+    // Check text fields
+    @objc func textFieldsIsEmptyCheck() {
+        let isEmpty = (emailTextField.text?.isEmpty ?? true) || (passwordTextField.text?.isEmpty ?? true)
+        if !isEmpty {
+            loginButton.isEnabled = true
+        } else {
+            loginButton.isEnabled = false
+        }
+    }
+}
+// MARK: Delegate for time and date
+extension LoginScreenVc: GiveAwayDateProtocol {
+    func giveAwayTime(time: String) {
+        DispatchQueue.main.async {
+            self.timeLabel.text = time
+        }
+    }
+    func giveAwayDate(date: String) {
+        DispatchQueue.main.async {
+            self.dateLabel.text = date
+        }
+    }
+}

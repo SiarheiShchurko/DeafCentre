@@ -77,7 +77,6 @@ private extension CallScreenVc {
     }
     // Add view func
     func addView() {
-       // view.addSubview(finishCall)
         view.addSubview(lookFreeOperatorLabel)
         view.addSubview(ellipseImage)
         view.addSubview(buttonsStackView)

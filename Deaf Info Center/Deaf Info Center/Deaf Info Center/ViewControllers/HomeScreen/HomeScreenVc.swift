@@ -10,7 +10,6 @@ import UIKit
 final class HomeScreenVc: UIViewController {
     // MARK: Constants
     private let homeModel = HomeScreenVm()
-    
     // MARK: Views
     private let headerView = HeaderView()
     private let logoImage: UIImageView = {
@@ -32,7 +31,11 @@ final class HomeScreenVc: UIViewController {
         return label
     }()
     // MARK: Buttons
-    private let menuButton = OneImageButton(image: UIImage(named: KeysForImage.verticalEllipsFigma) ?? UIImage())
+    private let menuButton: UIButton = {
+        let button = OneImageButton(image: UIImage(named: KeysForImage.verticalEllipsFigma) ?? UIImage())
+        button.addTarget(self, action: #selector(openMenu), for: .touchUpInside)
+        return button
+    }()
     private let videoCallButton: UIButton = { let button = OneImageButton(image: UIImage(named: KeysForImage.videoCallIFigma) ?? UIImage())
         button.addTarget(self, action: #selector(startVideoCall), for: .touchUpInside)
         return button
@@ -89,14 +92,20 @@ private extension HomeScreenVc {
 }
 // MARK: Actions
 private extension HomeScreenVc {
-    // Super view set
+    // Open calling display
     @objc func startVideoCall() {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+
          let nextVC = CallScreenVc()
         nextVC.modalPresentationStyle = .fullScreen
         navigationController?.present(nextVC, animated: true)
     }
+    // Open menu
+    @objc func openMenu() {
+         let nextVC = MenuVc()
+        navigationController?.pushViewController(nextVC, animated: true)
+    }
 }
+
 // MARK: Constraints
 private extension HomeScreenVc {
     func constraints() {

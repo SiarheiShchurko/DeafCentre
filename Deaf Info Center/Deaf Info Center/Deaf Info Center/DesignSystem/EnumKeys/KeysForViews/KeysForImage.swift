@@ -28,4 +28,5 @@ enum KeysForImage {
     static let cameraReverseFigma = "cameraReverseFigma"
     static let horizontalEllipseFigma = "horizontalEllipseFigma"
     static let micFigma = "micFigma"
+    static let closeScreenFigma = "closeScreenFigma"
 }

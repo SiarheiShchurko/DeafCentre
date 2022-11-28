@@ -17,7 +17,6 @@ protocol RegistrationModelProtocol: AnyObject {
 // MARK: RegistrationModel class
 final class RegistrationModel: RegistrationModelProtocol {
    
-    
     // Check Service
     let checkRegistrFormService: CheckRegistrationFormProtocol = CheckRegistrationFormService()
     // Update information funcs
