@@ -20,6 +20,7 @@ final class MenuVc: UIViewController {
         button.setTitle(KeysForView.userCabinet, for: .normal)
         button.setTitleColor(UIColor.black, for: .normal)
         button.titleLabel?.font = .jostRegular18()
+       // button.addTarget(self, action: #selector(), for: .touchUpInside)
         return button
     }()
     private let aboutAppButton: UIButton = {
@@ -45,7 +46,6 @@ final class MenuVc: UIViewController {
         button.setTitleColor(.black.withAlphaComponent(0.6), for: .normal)
         button.imageView?.trailingAnchor.constraint(equalTo: button.titleLabel!.leadingAnchor, constant: -LayoutConstants.inset11).isActive = true
         button.addTarget(self, action: #selector(logOut), for: .touchUpInside)
-
        return button
     }()
     // MARK: Views
@@ -110,13 +110,13 @@ private extension MenuVc {
 }
 // MARK: Actions
 private extension MenuVc {
+
     // Hide MeuVc
    @objc func popToHomeScreenVc() {
        navigationController?.popViewController(animated: true)
     }
     // Log out
    @objc func logOut() {
-    
        navigationController?.popToRootViewController(animated: true)
     }
 }

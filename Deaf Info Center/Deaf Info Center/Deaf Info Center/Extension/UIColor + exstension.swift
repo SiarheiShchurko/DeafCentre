@@ -18,5 +18,6 @@ extension UIColor {
     static let eerieBlackAlpha50 = UIColor(red: 0.1, green: 0.1, blue: 0.1, alpha: 0.5)
     static let jacksonsPurpleAlpha21 = UIColor(red: 0.259, green: 0.263, blue: 0.525, alpha: 0.21)
     static let borderGrayColor = UIColor(red: 0.78, green: 0.79, blue: 0.86, alpha: 1)
-    static let backgroundWhiteColor = UIColor(red: 0.93, green: 0.93, blue: 0.95, alpha: 1) 
+    static let backgroundWhiteColor = UIColor(red: 0.93, green: 0.93, blue: 0.95, alpha: 1)
+    static let gray33 = UIColor(red: 0.329, green: 0.329, blue: 0.329, alpha: 1)
 }

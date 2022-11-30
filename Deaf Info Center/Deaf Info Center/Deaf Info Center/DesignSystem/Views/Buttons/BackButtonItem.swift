@@ -17,8 +17,9 @@ final class BackButtonItem: UIButton {
 }
 
 private extension BackButtonItem {
-    private func setBackButtonItem() {
+     func setBackButtonItem() {
         self.translatesAutoresizingMaskIntoConstraints = false
         self.setImage(UIImage(named: KeysForImage.backBarButtonItem)?.withTintColor(.whiteWithAlpha40, renderingMode: .alwaysOriginal), for: .normal)
     }
 }
+

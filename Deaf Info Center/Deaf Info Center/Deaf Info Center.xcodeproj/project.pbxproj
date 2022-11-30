@@ -50,6 +50,13 @@
 		EDC0DA742928DC6800AB7E34 /* PurpouseFillTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC0DA732928DC6800AB7E34 /* PurpouseFillTopView.swift */; };
 		EDC0DA762929105A00AB7E34 /* HeaderLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC0DA752929105A00AB7E34 /* HeaderLabel.swift */; };
 		EDC0DA7829291B5B00AB7E34 /* BackButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC0DA7729291B5B00AB7E34 /* BackButtonItem.swift */; };
+		EDDAED232935FCAE0024FACD /* HistoryCallsVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDAED222935FCAE0024FACD /* HistoryCallsVc.swift */; };
+		EDDAED262935FCD70024FACD /* HistoryCallsVm.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDAED252935FCD70024FACD /* HistoryCallsVm.swift */; };
+		EDDAED2C293617820024FACD /* HistoryTViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDAED2B293617820024FACD /* HistoryTViewCell.swift */; };
+		EDDAED3029361A350024FACD /* UserCallsStored.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDAED2F29361A350024FACD /* UserCallsStored.swift */; };
+		EDDAED3329361C170024FACD /* GetUserCallsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDAED3229361C170024FACD /* GetUserCallsService.swift */; };
+		EDDAED35293636410024FACD /* UserCallsStoredTView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDAED34293636410024FACD /* UserCallsStoredTView.swift */; };
+		EDDAED3729363FB40024FACD /* Jost-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDDAED3629363FB40024FACD /* Jost-Light.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -98,6 +105,13 @@
 		EDC0DA732928DC6800AB7E34 /* PurpouseFillTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurpouseFillTopView.swift; sourceTree = "<group>"; };
 		EDC0DA752929105A00AB7E34 /* HeaderLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderLabel.swift; sourceTree = "<group>"; };
 		EDC0DA7729291B5B00AB7E34 /* BackButtonItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButtonItem.swift; sourceTree = "<group>"; };
+		EDDAED222935FCAE0024FACD /* HistoryCallsVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCallsVc.swift; sourceTree = "<group>"; };
+		EDDAED252935FCD70024FACD /* HistoryCallsVm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCallsVm.swift; sourceTree = "<group>"; };
+		EDDAED2B293617820024FACD /* HistoryTViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTViewCell.swift; sourceTree = "<group>"; };
+		EDDAED2F29361A350024FACD /* UserCallsStored.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCallsStored.swift; sourceTree = "<group>"; };
+		EDDAED3229361C170024FACD /* GetUserCallsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserCallsService.swift; sourceTree = "<group>"; };
+		EDDAED34293636410024FACD /* UserCallsStoredTView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCallsStoredTView.swift; sourceTree = "<group>"; };
+		EDDAED3629363FB40024FACD /* Jost-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Jost-Light.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +153,7 @@
 		ED0FC0BC292632F800669798 /* Deaf Info Center */ = {
 			isa = PBXGroup;
 			children = (
+				EDDAED2D293619A50024FACD /* Entities */,
 				ED0FC0EC2926387300669798 /* Resourses */,
 				ED0FC0DA292634D800669798 /* ViewControllers */,
 				ED0FC0F029263EB400669798 /* Services */,
@@ -185,6 +200,8 @@
 		ED0FC0DA292634D800669798 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				ED9DC8372937572600DFC5DF /* ProfileSetScreen */,
+				EDDAED212935FC7D0024FACD /* HistoryCallsScreen */,
 				ED56E0B429349FE900EEAD60 /* MenuScreen */,
 				EDBE98432933681F0015124A /* CallScreen */,
 				ED712D502932003200977FB3 /* HomeScreen */,
@@ -247,6 +264,7 @@
 		ED0FC0E9292635A200669798 /* Jost */ = {
 			isa = PBXGroup;
 			children = (
+				EDDAED3629363FB40024FACD /* Jost-Light.ttf */,
 				ED0FC0FB2926944600669798 /* Jost-Medium.ttf */,
 				ED0FC0EA292635BD00669798 /* Jost-Regular.ttf */,
 			);
@@ -274,6 +292,7 @@
 		ED0FC0F029263EB400669798 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				EDDAED3129361BCF0024FACD /* GetUserCallsService */,
 				ED4DD346292F6AB8002FE2D8 /* CheckServices */,
 				ED0FC0F129263ECA00669798 /* GetTimeService */,
 			);
@@ -333,6 +352,13 @@
 			path = HomeScreen;
 			sourceTree = "<group>";
 		};
+		ED9DC8372937572600DFC5DF /* ProfileSetScreen */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ProfileSetScreen;
+			sourceTree = "<group>";
+		};
 		EDBE98432933681F0015124A /* CallScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -352,6 +378,57 @@
 				ED712D4C2931FD5400977FB3 /* PickerView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		EDDAED212935FC7D0024FACD /* HistoryCallsScreen */ = {
+			isa = PBXGroup;
+			children = (
+				EDDAED2729360FAD0024FACD /* HistoryTableView */,
+				EDDAED222935FCAE0024FACD /* HistoryCallsVc.swift */,
+				EDDAED252935FCD70024FACD /* HistoryCallsVm.swift */,
+			);
+			path = HistoryCallsScreen;
+			sourceTree = "<group>";
+		};
+		EDDAED2729360FAD0024FACD /* HistoryTableView */ = {
+			isa = PBXGroup;
+			children = (
+				EDDAED2A293617540024FACD /* HistoryTViewCell */,
+				EDDAED34293636410024FACD /* UserCallsStoredTView.swift */,
+			);
+			path = HistoryTableView;
+			sourceTree = "<group>";
+		};
+		EDDAED2A293617540024FACD /* HistoryTViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				EDDAED2B293617820024FACD /* HistoryTViewCell.swift */,
+			);
+			path = HistoryTViewCell;
+			sourceTree = "<group>";
+		};
+		EDDAED2D293619A50024FACD /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				EDDAED2E293619E50024FACD /* UserCallsStoredModel */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		EDDAED2E293619E50024FACD /* UserCallsStoredModel */ = {
+			isa = PBXGroup;
+			children = (
+				EDDAED2F29361A350024FACD /* UserCallsStored.swift */,
+			);
+			path = UserCallsStoredModel;
+			sourceTree = "<group>";
+		};
+		EDDAED3129361BCF0024FACD /* GetUserCallsService */ = {
+			isa = PBXGroup;
+			children = (
+				EDDAED3229361C170024FACD /* GetUserCallsService.swift */,
+			);
+			path = GetUserCallsService;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -415,6 +492,7 @@
 				ED0FC0CA292632FA00669798 /* LaunchScreen.storyboard in Resources */,
 				ED0FC0C7292632F900669798 /* Assets.xcassets in Resources */,
 				ED0FC0C5292632F800669798 /* Main.storyboard in Resources */,
+				EDDAED3729363FB40024FACD /* Jost-Light.ttf in Resources */,
 				ED0FC0FC2926944600669798 /* Jost-Medium.ttf in Resources */,
 				ED0FC0EB292635BD00669798 /* Jost-Regular.ttf in Resources */,
 			);
@@ -431,13 +509,17 @@
 				ED712D522932006600977FB3 /* HomeScreenVm.swift in Sources */,
 				ED62BC64292B69990044C432 /* RegistrationTfLabel.swift in Sources */,
 				ED0FC0EF29263EA400669798 /* LoginScreenVm.swift in Sources */,
+				EDDAED2C293617820024FACD /* HistoryTViewCell.swift in Sources */,
+				EDDAED3029361A350024FACD /* UserCallsStored.swift in Sources */,
 				ED0FC0FA2926937700669798 /* KeysForView.swift in Sources */,
 				ED712D4D2931FD5400977FB3 /* PickerView.swift in Sources */,
 				ED0FC0E72926350C00669798 /* UniversalLabel.swift in Sources */,
+				EDDAED35293636410024FACD /* UserCallsStoredTView.swift in Sources */,
 				ED059A7B2927D9D100077B73 /* RegistrationVm.swift in Sources */,
 				EDBE984729336A660015124A /* CallScreenVm.swift in Sources */,
 				EDC0DA742928DC6800AB7E34 /* PurpouseFillTopView.swift in Sources */,
 				ED0FC0D92926348800669798 /* UIColor + exstension.swift in Sources */,
+				EDDAED232935FCAE0024FACD /* HistoryCallsVc.swift in Sources */,
 				EDC0DA7829291B5B00AB7E34 /* BackButtonItem.swift in Sources */,
 				EDBE984529336A550015124A /* CallScreenVc.swift in Sources */,
 				ED0FC0D82926348800669798 /* UIFont + extension.swift in Sources */,
@@ -445,6 +527,7 @@
 				ED62BC66292B80760044C432 /* KeysForSymbols.swift in Sources */,
 				ED53E4AC292BA6B80005D51B /* CheckBoxButton.swift in Sources */,
 				ED829070292D2FEE00DD6233 /* ConfirmButton.swift in Sources */,
+				EDDAED262935FCD70024FACD /* HistoryCallsVm.swift in Sources */,
 				ED0FC0F3292640B800669798 /* DateService.swift in Sources */,
 				ED56E0B62934A01900EEAD60 /* MenuVc.swift in Sources */,
 				ED0FC0E62926350C00669798 /* OneImageButton.swift in Sources */,
@@ -464,6 +547,7 @@
 				ED528F68292E61B400857B94 /* UIViewController + extension.swift in Sources */,
 				ED0FC0D42926345100669798 /* Constant.swift in Sources */,
 				ED4DD348292F6B04002FE2D8 /* CheckRegistrFormService.swift in Sources */,
+				EDDAED3329361C170024FACD /* GetUserCallsService.swift in Sources */,
 				ED56E0B92934A03200EEAD60 /* MenuVm.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

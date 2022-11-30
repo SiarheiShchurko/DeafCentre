@@ -9,10 +9,12 @@ import Foundation
 import UIKit
 
 extension UIFont {
+    static func jostLight13() -> UIFont? {
+        return UIFont.init(name: "Jost-light", size: 13)
+    }
     static func jostRegular14() -> UIFont? {
         return UIFont.init(name: "Jost-Regular", size: 14)
     }
-    
     static func jostRegular15() -> UIFont? {
         return UIFont.init(name: "Jost-Regular", size: 15)
     }

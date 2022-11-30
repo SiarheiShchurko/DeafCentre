@@ -6,6 +6,7 @@
 	<array>
 		<string>Jost-Medium.ttf</string>
 		<string>Jost-Regular.ttf</string>
+		<string>Jost-Light.ttf</string>
 	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>

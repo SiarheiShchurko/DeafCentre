@@ -43,7 +43,7 @@ final class HomeScreenVc: UIViewController {
     private let historyCallsButton: UIButton = {
         let button = UIButton(type: .custom)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("Istoria apelurilor", for: .normal)
+        button.setTitle(KeysForView.historyCalls, for: .normal)
         button.setTitleColor(.purpoureLight, for: .normal)
         button.setTitleColor(.black, for: .highlighted)
         button.titleLabel?.font = UIFont.jostRegular17()
@@ -55,6 +55,7 @@ final class HomeScreenVc: UIViewController {
         button.titleLabel?.widthAnchor.constraint(equalTo: button.widthAnchor).isActive = true
         button.titleLabel?.centerXAnchor.constraint(equalTo: button.centerXAnchor).isActive = true
         button.titleLabel?.heightAnchor.constraint(equalToConstant: LayoutConstants.inset20).isActive = true
+        button.addTarget(self, action: #selector(openHistoryCalls), for: .touchUpInside)
         return button
     }()
     // MARK: System methods
@@ -94,7 +95,6 @@ private extension HomeScreenVc {
 private extension HomeScreenVc {
     // Open calling display
     @objc func startVideoCall() {
-
          let nextVC = CallScreenVc()
         nextVC.modalPresentationStyle = .fullScreen
         navigationController?.present(nextVC, animated: true)
@@ -104,8 +104,12 @@ private extension HomeScreenVc {
          let nextVC = MenuVc()
         navigationController?.pushViewController(nextVC, animated: true)
     }
+    // Open History calls Vc
+    @objc func openHistoryCalls() {
+         let nextVC = HistoryCallsVc()
+        navigationController?.pushViewController(nextVC, animated: true)
+    }
 }
-
 // MARK: Constraints
 private extension HomeScreenVc {
     func constraints() {

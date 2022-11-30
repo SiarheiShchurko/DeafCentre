@@ -92,8 +92,10 @@ enum LayoutConstants {
     static let height20: CGFloat = 20.0
     static let height22: CGFloat = 22.0
     static let height24: CGFloat = 24.0
+    static let height30: CGFloat = 30.0
     static let height32: CGFloat = 32.0
     static let height38: CGFloat = 38.0
+    static let height44: CGFloat = 44.0
     static let height48: CGFloat = 48.0
     static let height50: CGFloat = 50.0
     static let height56: CGFloat = 56.0

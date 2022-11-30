@@ -43,7 +43,8 @@ enum KeysForView {
     static let userCabinet = "Cabinet personal"
     static let aboutApp = "Despre aplicate"
     static let feedback = "Feedback"
-    static let logOut = "Log out" 
+    static let logOut = "Log out"
+    static let historyCalls = "Istoria apelurilor"
 }
 
 
