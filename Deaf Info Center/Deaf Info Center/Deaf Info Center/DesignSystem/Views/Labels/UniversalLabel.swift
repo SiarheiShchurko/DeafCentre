@@ -7,7 +7,6 @@
 import UIKit
 
 final class UniversalLabel: UILabel {
-    
     var titleText: String?
     var color: UIColor?
     var labelFont: UIFont?
@@ -23,18 +22,15 @@ final class UniversalLabel: UILabel {
         fatalError("init(coder:) has not been implemented")
     }
 }
-
-
 // MARK: - SetUp label
 private extension UniversalLabel {
     private func configure(titleText: String, color: UIColor, labelFont: UIFont) {
-        
+        self.translatesAutoresizingMaskIntoConstraints = false
         self.text = titleText
         self.textColor = color
         self.font = labelFont
         self.numberOfLines = 0
         self.textAlignment = .left
-        self.translatesAutoresizingMaskIntoConstraints = false
     }
 }
 

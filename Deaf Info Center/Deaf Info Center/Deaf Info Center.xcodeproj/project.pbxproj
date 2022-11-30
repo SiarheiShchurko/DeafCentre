@@ -44,6 +44,11 @@
 		ED712D522932006600977FB3 /* HomeScreenVm.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED712D512932006600977FB3 /* HomeScreenVm.swift */; };
 		ED82906E292D09C700DD6233 /* RadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED82906D292D09C700DD6233 /* RadioButton.swift */; };
 		ED829070292D2FEE00DD6233 /* ConfirmButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED82906F292D2FEE00DD6233 /* ConfirmButton.swift */; };
+		ED9DC8392937582200DFC5DF /* PersonalCabinetVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9DC8382937582200DFC5DF /* PersonalCabinetVc.swift */; };
+		ED9DC83C2937583900DFC5DF /* PersonalCabinetVm.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9DC83B2937583900DFC5DF /* PersonalCabinetVm.swift */; };
+		ED9DC83F29375C1000DFC5DF /* UIButton + extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9DC83E29375C1000DFC5DF /* UIButton + extension.swift */; };
+		ED9DC841293768A000DFC5DF /* ImageViewForAvatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9DC840293768A000DFC5DF /* ImageViewForAvatar.swift */; };
+		ED9DC8442937837600DFC5DF /* ProfileButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9DC8432937837600DFC5DF /* ProfileButton.swift */; };
 		EDBE984529336A550015124A /* CallScreenVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDBE984429336A550015124A /* CallScreenVc.swift */; };
 		EDBE984729336A660015124A /* CallScreenVm.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDBE984629336A660015124A /* CallScreenVm.swift */; };
 		EDC0DA722928DC2700AB7E34 /* CornerAngleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC0DA712928DC2700AB7E34 /* CornerAngleView.swift */; };
@@ -99,6 +104,11 @@
 		ED712D512932006600977FB3 /* HomeScreenVm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenVm.swift; sourceTree = "<group>"; };
 		ED82906D292D09C700DD6233 /* RadioButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButton.swift; sourceTree = "<group>"; };
 		ED82906F292D2FEE00DD6233 /* ConfirmButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmButton.swift; sourceTree = "<group>"; };
+		ED9DC8382937582200DFC5DF /* PersonalCabinetVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalCabinetVc.swift; sourceTree = "<group>"; };
+		ED9DC83B2937583900DFC5DF /* PersonalCabinetVm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalCabinetVm.swift; sourceTree = "<group>"; };
+		ED9DC83E29375C1000DFC5DF /* UIButton + extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton + extension.swift"; sourceTree = "<group>"; };
+		ED9DC840293768A000DFC5DF /* ImageViewForAvatar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewForAvatar.swift; sourceTree = "<group>"; };
+		ED9DC8432937837600DFC5DF /* ProfileButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileButton.swift; sourceTree = "<group>"; };
 		EDBE984429336A550015124A /* CallScreenVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallScreenVc.swift; sourceTree = "<group>"; };
 		EDBE984629336A660015124A /* CallScreenVm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallScreenVm.swift; sourceTree = "<group>"; };
 		EDC0DA712928DC2700AB7E34 /* CornerAngleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerAngleView.swift; sourceTree = "<group>"; };
@@ -193,6 +203,7 @@
 				ED528F67292E61B400857B94 /* UIViewController + extension.swift */,
 				ED528F69292E622800857B94 /* UIView + extension.swift */,
 				ED2802D92930FD6B003971DD /* UITextField + extension.swift */,
+				ED9DC83E29375C1000DFC5DF /* UIButton + extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -239,6 +250,7 @@
 				ED53E4AB292BA6B80005D51B /* CheckBoxButton.swift */,
 				ED82906D292D09C700DD6233 /* RadioButton.swift */,
 				ED82906F292D2FEE00DD6233 /* ConfirmButton.swift */,
+				ED9DC8432937837600DFC5DF /* ProfileButton.swift */,
 			);
 			path = Buttons;
 			sourceTree = "<group>";
@@ -355,8 +367,17 @@
 		ED9DC8372937572600DFC5DF /* ProfileSetScreen */ = {
 			isa = PBXGroup;
 			children = (
+				ED9DC8382937582200DFC5DF /* PersonalCabinetVc.swift */,
+				ED9DC83B2937583900DFC5DF /* PersonalCabinetVm.swift */,
 			);
 			path = ProfileSetScreen;
+			sourceTree = "<group>";
+		};
+		ED9DC84229377B9000DFC5DF /* UserInfoModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UserInfoModel;
 			sourceTree = "<group>";
 		};
 		EDBE98432933681F0015124A /* CallScreen */ = {
@@ -376,6 +397,7 @@
 				ED528F6B292E6DF200857B94 /* ShadowView.swift */,
 				ED528F6D292E840300857B94 /* SeparatorView.swift */,
 				ED712D4C2931FD5400977FB3 /* PickerView.swift */,
+				ED9DC840293768A000DFC5DF /* ImageViewForAvatar.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -410,6 +432,7 @@
 		EDDAED2D293619A50024FACD /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				ED9DC84229377B9000DFC5DF /* UserInfoModel */,
 				EDDAED2E293619E50024FACD /* UserCallsStoredModel */,
 			);
 			path = Entities;
@@ -508,11 +531,14 @@
 				ED612AFB292A56B70098CA87 /* RegistrationTf.swift in Sources */,
 				ED712D522932006600977FB3 /* HomeScreenVm.swift in Sources */,
 				ED62BC64292B69990044C432 /* RegistrationTfLabel.swift in Sources */,
+				ED9DC8392937582200DFC5DF /* PersonalCabinetVc.swift in Sources */,
 				ED0FC0EF29263EA400669798 /* LoginScreenVm.swift in Sources */,
 				EDDAED2C293617820024FACD /* HistoryTViewCell.swift in Sources */,
 				EDDAED3029361A350024FACD /* UserCallsStored.swift in Sources */,
+				ED9DC841293768A000DFC5DF /* ImageViewForAvatar.swift in Sources */,
 				ED0FC0FA2926937700669798 /* KeysForView.swift in Sources */,
 				ED712D4D2931FD5400977FB3 /* PickerView.swift in Sources */,
+				ED9DC8442937837600DFC5DF /* ProfileButton.swift in Sources */,
 				ED0FC0E72926350C00669798 /* UniversalLabel.swift in Sources */,
 				EDDAED35293636410024FACD /* UserCallsStoredTView.swift in Sources */,
 				ED059A7B2927D9D100077B73 /* RegistrationVm.swift in Sources */,
@@ -533,10 +559,12 @@
 				ED0FC0E62926350C00669798 /* OneImageButton.swift in Sources */,
 				ED82906E292D09C700DD6233 /* RadioButton.swift in Sources */,
 				ED528F6E292E840300857B94 /* SeparatorView.swift in Sources */,
+				ED9DC83C2937583900DFC5DF /* PersonalCabinetVm.swift in Sources */,
 				ED528F6A292E622800857B94 /* UIView + extension.swift in Sources */,
 				ED0FC0BE292632F800669798 /* AppDelegate.swift in Sources */,
 				ED0FC0E02926350300669798 /* KeysForImage.swift in Sources */,
 				ED528F6C292E6DF200857B94 /* ShadowView.swift in Sources */,
+				ED9DC83F29375C1000DFC5DF /* UIButton + extension.swift in Sources */,
 				ED0FC0F729267B8000669798 /* LoginDisplayTf.swift in Sources */,
 				EDC0DA722928DC2700AB7E34 /* CornerAngleView.swift in Sources */,
 				ED0FC0DD292634D800669798 /* LoginScreenVc.swift in Sources */,

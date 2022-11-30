@@ -4,8 +4,6 @@
 //
 //  Created by Alinser Shchurko on 29.11.22.
 //
-
-import Foundation
 import UIKit
 
 protocol HistoryCallsModelProtocol: AnyObject {
@@ -22,7 +20,7 @@ final class HistoryCallsVm: HistoryCallsModelProtocol {
     weak var delegateCountCells: UserCallsTViewDelegateProtocol?
   //  private var operatorCall = UserCallsStored(avatar: UIImage(), operatorName: "Galina")
 //    // MARK: Array
-    var callsArray: [UserCallsStored] = [UserCallsStored(avatar: UIImage(named: KeysForImage.appLogoButton) ?? UIImage(), operatorName: "Galina", date: Date(), duration: 10), UserCallsStored(avatar: UIImage(named: KeysForImage.finishCallFigma) ?? UIImage(), operatorName: "Pavel", date: Date(timeInterval: 100, since: Date()), duration: 5054)]
+    var callsArray: [UserCallsStored] = [UserCallsStored(avatar: UIImage(named: KeysForImage.appLogoButton) ?? UIImage(), operatorName: "Galina", date: Date(), duration: 10), UserCallsStored(avatar: UIImage(named: KeysForImage.finishCallFigma) ?? UIImage(), operatorName: "Pavel", date: Date(timeInterval: 100, since: Date()), duration: 5054), UserCallsStored(avatar: UIImage(named: KeysForImage.videoCallIFigma) ?? UIImage(), operatorName: "Dmitry", date: Date(timeIntervalSince1970: 100), duration: 657)]
  //   {
 //        didSet { delegateCountCells?.delegateArrayCalls(callsArray: callsArray) }
 //    }

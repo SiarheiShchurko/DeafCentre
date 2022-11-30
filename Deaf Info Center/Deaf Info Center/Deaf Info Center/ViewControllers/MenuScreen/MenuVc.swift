@@ -8,21 +8,23 @@
 import UIKit
 
 final class MenuVc: UIViewController {
-    
     // MARK: Buttons
+    // Close menu button
     private let closeMenuButton: UIButton = {
         let button = OneImageButton(image: UIImage(named: KeysForImage.closeScreenFigma)?.withTintColor(.black, renderingMode: .alwaysOriginal) ?? UIImage())
         button.addTarget(self, action: #selector(popToHomeScreenVc), for: .touchUpInside)
         return button
     }()
+    // Personal cabinet Button
     private let cabinetPersonalButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle(KeysForView.userCabinet, for: .normal)
         button.setTitleColor(UIColor.black, for: .normal)
         button.titleLabel?.font = .jostRegular18()
-       // button.addTarget(self, action: #selector(), for: .touchUpInside)
+        button.addTarget(self, action: #selector(pushToPersonalCabinet), for: .touchUpInside)
         return button
     }()
+    // About app button
     private let aboutAppButton: UIButton = {
             let button = UIButton(type: .system)
             button.setTitle(KeysForView.aboutApp, for: .normal)
@@ -30,6 +32,7 @@ final class MenuVc: UIViewController {
             button.titleLabel?.font = .jostRegular18()
             return button
         }()
+    // Feedback button
     private let feedbackButton: UIButton = {
                 let button = UIButton(type: .system)
                 button.setTitle(KeysForView.feedback, for: .normal)
@@ -37,6 +40,7 @@ final class MenuVc: UIViewController {
                 button.titleLabel?.font = .jostRegular18()
                 return button
             }()
+    // Log out button
     private let logoutButton: UIButton = {
         let button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -110,7 +114,13 @@ private extension MenuVc {
 }
 // MARK: Actions
 private extension MenuVc {
-
+    
+    // Push to PersonalCabinet
+    @objc func pushToPersonalCabinet() {
+        let nextVc = PersonalCabinetVc()
+        navigationController?.pushViewController(nextVc, animated: true)
+    }
+    
     // Hide MeuVc
    @objc func popToHomeScreenVc() {
        navigationController?.popViewController(animated: true)

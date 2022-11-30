@@ -10,13 +10,7 @@ import UIKit
 final class HomeScreenVc: UIViewController {
     // MARK: Constants
     private let homeModel = HomeScreenVm()
-    // MARK: Views
-    private let headerView = HeaderView()
-    private let logoImage: UIImageView = {
-        let imageView = UIImageView(image: UIImage(named: KeysForImage.appLogoButton) ?? UIImage())
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        return imageView
-    }()
+
     // MARK: Labels
     // Time label
     private lazy var timeLabel: UILabel = {
@@ -57,6 +51,13 @@ final class HomeScreenVc: UIViewController {
         button.titleLabel?.heightAnchor.constraint(equalToConstant: LayoutConstants.inset20).isActive = true
         button.addTarget(self, action: #selector(openHistoryCalls), for: .touchUpInside)
         return button
+    }()
+    // MARK: Views
+    private let headerView = HeaderView()
+    private let logoImage: UIImageView = {
+        let imageView = UIImageView(image: UIImage(named: KeysForImage.appLogoButton) ?? UIImage())
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
     }()
     // MARK: System methods
     override func viewDidLoad() {

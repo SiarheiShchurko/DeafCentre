@@ -21,15 +21,8 @@ final class HistoryTViewCell: UITableViewCell {
     }
     private let dateFormatter = DateFormatter()
     static let reusedId = "HistoryTViewCell"
-    let avatar: UIImageView = {
-       let imageView = UIImageView()
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.frame.size = CGSize(width: LayoutConstants.width44, height: LayoutConstants.height44)
-        imageView.layer.cornerRadius = imageView.frame.size.width / LayoutConstants.inset2
-        imageView.contentMode = .scaleAspectFit
-        imageView.clipsToBounds = true
-        return imageView
-    }()
+    let avatar = ImageViewForAvatar(avatarImage: UIImage(named: "") ?? UIImage())
+    
     let nameOperator = UniversalLabel(titleText: "", color: .black, labelFont: .jostRegular17() ?? UIFont())
 
     let date: UILabel = {
@@ -73,8 +66,8 @@ extension HistoryTViewCell {
             avatar.heightAnchor.constraint(equalToConstant: LayoutConstants.height44),
             // Operator name
             nameOperator.topAnchor.constraint(equalTo: topAnchor, constant:  LayoutConstants.inset16),
-            nameOperator.leadingAnchor.constraint(equalTo: avatar.trailingAnchor, constant: LayoutConstants.inset4),
-            nameOperator.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -LayoutConstants.inset4),
+            nameOperator.leadingAnchor.constraint(equalTo: avatar.trailingAnchor, constant: LayoutConstants.inset8),
+            nameOperator.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -LayoutConstants.inset8),
             // Date
             date.topAnchor.constraint(equalTo: nameOperator.bottomAnchor, constant: LayoutConstants.inset1),
             date.leadingAnchor.constraint(equalTo: nameOperator.leadingAnchor),

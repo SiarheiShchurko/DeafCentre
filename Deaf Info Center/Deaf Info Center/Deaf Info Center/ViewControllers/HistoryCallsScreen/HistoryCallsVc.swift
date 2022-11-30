@@ -4,7 +4,6 @@
 //
 //  Created by Alinser Shchurko on 29.11.22.
 //
-
 import UIKit
 final class HistoryCallsVc: UIViewController {
     // MARK: Constants
@@ -28,9 +27,9 @@ final class HistoryCallsVc: UIViewController {
     // MARK: System methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        setSuperView()
         addView()
         constraints()
-        setSuperView()
         setTableView()
     }
 }
@@ -40,6 +39,7 @@ private extension HistoryCallsVc {
     // Set superView
     func setSuperView() {
         self.view.backgroundColor = .white
+        self.view.addShadows()
     }
     // Add views
     func addView() {

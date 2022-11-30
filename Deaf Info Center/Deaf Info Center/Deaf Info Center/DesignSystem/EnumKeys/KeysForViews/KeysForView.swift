@@ -45,6 +45,11 @@ enum KeysForView {
     static let feedback = "Feedback"
     static let logOut = "Log out"
     static let historyCalls = "Istoria apelurilor"
+    static let personalCabinet = "Cabinet personale"
+    static let changedFoto = "Schimba fotografie"
+    static let personalData = "Date personale"
+    static let changePassword = "Schimbare parolului"
+    static let applicationLanguage = "Limba aplicatiei"
 }
 
 
