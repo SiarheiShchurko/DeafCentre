@@ -16,7 +16,7 @@ If requared fields no filled, app showed alert and highlited red border "no fill
 Fields email and password have check validation. If email or password no valid, app showed alert about it.
 
 When registration process is over, app open start page:
-![StartPage](https://user-images.githubusercontent.com/101253596/205484965-0a4c84a2-497d-44b5-93a2-4233a787911e.png)
+![HomeScreen](https://user-images.githubusercontent.com/101253596/205485741-f0d8f521-0115-444e-bce8-df1bd8f8bbf4.png)
 
 Here we can tap to video call button (grenn camera), and app started calling to call center:
 ![Proccess Call](https://user-images.githubusercontent.com/101253596/205485088-5a9c471c-573b-461a-ac8e-0257bf969005.png)
